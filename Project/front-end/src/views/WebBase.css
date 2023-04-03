@@ -1,0 +1,91 @@
+h1 {
+    background-color: black;
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+#logo {
+    height: 100px;
+    width: 200px;
+    gap: 50px 50px;
+}
+
+.mainHeader {
+    height: auto;
+    opacity: 0.5;
+    
+}
+
+h1:hover{
+    color: aqua
+}
+.navBar {
+
+    height: 575px;
+    width: 220px;
+    background-color: white;
+    box-shadow: 10px;
+    border-radius: 20px;
+
+    /* position: absolute; */
+    position: fixed;
+    opacity: 0.5;
+    top: 80px;
+
+}
+
+
+.About {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 800px;
+}
+
+ul {
+    list-style-position: inside;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-right: 5px;
+
+}
+
+li {
+
+    padding-bottom: 30px;
+    padding-right: 20px;
+    padding-top: 20px;
+    list-style: none;
+    font-size: 20px;
+    text-align: left;
+    -webkit-transition: background-color 0.3s ease-in-out;
+
+}
+
+li:hover {
+    font-weight: bolder;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+
+    background-image: url("../static/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: 1500px 900px;
+
+}

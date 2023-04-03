@@ -1,0 +1,27 @@
+1. Blogging Site
+
+2. Donation Management System: Create a web-based system that enables non-profit organizations to manage and track their donations. 
+   It can help them keep track of donors, donations, and generate reports for tax purposes.
+   {Philantrophy Platform,Charitable Contributions and Donations Portal}
+
+3.Healthcare portal: Create a web portal that allows patients to schedule appointments, access their medical records, 
+  and communicate with their doctors online. This can help to streamline healthcare delivery and reduce wait times for patients.
+  {MedConnect}
+
+
+4.Property management system: Build a web application that helps landlords and property managers manage their rental properties. 
+  This can include tools for tenant management, rent collection, and maintenance tracking.
+  {RentEase,RentMaster}
+
+5.Job portal: Develop a web application that connects job seekers with potential employers. It can allow job seekers to create profiles, search for job listings, and apply for jobs online. Employers can also post job listings and search for qualified candidates.
+   {TalentFinder,HirePath,WorkConnect}
+
+
+6. Student and College Portal : 
+To have a one stop destination portal for providing trainings to the students where learning materials can be uploaded 
+in an advanced and organized manner. 
+• Forum for Q&A categorical divided on basis of standards
+• Track progress of an individual and design the report for evaluation
+• Section to upload/download curriculum, class activities, home assignment
+
+{EduSphere}
