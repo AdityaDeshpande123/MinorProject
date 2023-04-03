@@ -9,7 +9,7 @@ function Signpage() {
             <form>
                 <h2>BLOGOSPHERE</h2>
                 
-                <label>Enter your name</label><br></br>
+                <label>Login ID</label><br></br>
                 <input type='text'></input> <br></br><br></br>
                 <label>Password</label><br></br>
                 <input type='text'></input> <br></br><br></br>
