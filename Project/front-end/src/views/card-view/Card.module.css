@@ -1,0 +1,29 @@
+
+.card_container{
+    position: absolute;
+    left : 600px;
+    top : 300px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0px 0px 15px -5px;
+    padding: 0px;
+    /* background-image: none;
+    background-color: white; */
+}
+.image_container img{
+
+    overflow: hidden;
+    height: 200px;
+    padding: 0px;
+    
+    
+}
+
+.title_container{
+    padding: 0px;
+}
+
+.body_container
+{
+    padding: 0px;
+}
