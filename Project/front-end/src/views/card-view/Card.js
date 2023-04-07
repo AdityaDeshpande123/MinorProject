@@ -1,6 +1,6 @@
 import React from 'react';
 import imgUrl from '../../static/bg1.jpeg'
-import './Card.css'
+import styles from './Card.module.css'
 function Card()
 {
     let title = "Image";
@@ -18,7 +18,7 @@ function Card()
 
             <div className='title-container'>
 
-                <h2>{title}</h2>
+                <h3 >{title}</h3>
             </div>
 
 
@@ -26,13 +26,7 @@ function Card()
                 <p>{Body}</p>
             </div>
 
-
-
-
-
         </div>
-
-
 
     );
 }
