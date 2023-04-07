@@ -1,36 +1,12 @@
-import './Signpage.css'
+import "./Signpage.css"
+
+import Auth from "./Auth"
 
 function Signpage() {
-
-    return (
-
-        <div>
-
-            <form>
-                <h2>BLOGOSPHERE</h2>
-                
-
-                <label>Enter your name11</label><br></br>
-                <input type='text'></input> <br></br><br></br>
-                <label>Password</label><br></br>
-                <input type='text'></input> <br></br><br></br>
-
-                <button>Signup</button>
-                <button>Login</button>
-
-
-
-
-            </form>
-
-
-        </div>
-
-
-    );
-
-
+  return (
+    <Auth></Auth>
+    
+  )
 }
 
-
-export default Signpage;
+export default Signpage
