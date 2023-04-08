@@ -1,30 +1,31 @@
 import React from 'react';
-import imgUrl from '../../static/bg1.jpeg'
 import styles from './Card.module.css'
-function Card()
+function Card(props)
 {
-    let title = "Image";
-    let Body = "This is the body of the message";
     
+    let imgUrl = props.imgURL;
+    let title = props.title;
+    let Body = props.Body;
 
     return(
 
-        <div className='card-container'>
+        <div className={styles.card_container}>
 
-            <div className='image-container'>
+            <div className={styles.image_container}>
 
                 <img src ={imgUrl} alt='image'></img>
             </div>
 
-            <div className='title-container'>
+            <div className={styles.title_container}>
 
-                <h3 >{title}</h3>
+                <h3 className={styles.title_container}>{title}</h3>
             </div>
 
 
-            <div className='body-container'>
-                <p>{Body}</p>
+            <div className={styles.body_container}>
+                <p className={styles.body_container}>{Body}</p>
             </div>
+
 
         </div>
 

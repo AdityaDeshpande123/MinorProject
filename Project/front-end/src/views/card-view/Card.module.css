@@ -5,11 +5,12 @@
     top : 300px;
     overflow: hidden;
     width: 300px;
-    box-shadow: 0px 0px 15px -5px;
+    box-shadow: 0px 0px 25px -5px;
     padding: 0px;
     /* background-image: none;
     background-color: white; */
 }
+
 .image_container img{
 
     overflow: hidden;
@@ -20,10 +21,14 @@
 }
 
 .title_container{
-    padding: 0px;
+   padding: 10px;
+   padding-bottom: 0px;
+   text-align: center;
+    
 }
 
 .body_container
 {
-    padding: 0px;
+    padding: 10px;
+
 }

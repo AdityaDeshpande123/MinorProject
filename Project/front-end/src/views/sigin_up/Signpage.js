@@ -1,6 +1,8 @@
 import styles from './Signpage.module.css'
 import back from './bg1.jpg'
+
 function Signpage() {
+    
 
     document.body.style.backgroundImage = `url(${back})`;
     document.body.style.backgroundSize = "1600px 900px"
