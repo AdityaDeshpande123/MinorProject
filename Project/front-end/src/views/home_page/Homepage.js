@@ -3,6 +3,7 @@ import styles from './Homepage.module.css'
 import Card from "../card-view/Card";
 import React, { useState } from "react";
 import bg1 from '../../static/bg1.jpeg'
+import bg2 from '../../static/bg1.jpg'
 import search from '../../static/search-512.png'
 import { useNavigate } from 'react-router-dom';
 function Homepage() {
@@ -13,80 +14,96 @@ function Homepage() {
 
             title: "Title 1",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
+            img: require("../../static/bg1.jpeg")
 
         },
         {
 
             title: "Title 2",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
+            img: require("../../static/bg1.jpeg")
 
         },
         {
 
             title: "Title 3",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
+            img: require("../../static/bg1.jpeg")
 
         },
         {
 
             title: "Title 4",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
-
+            img: require("../../static/bg1.jpeg")
         },
         {
 
             title: "Title 5",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
-
+            img: require("../../static/bg1.jpeg")
         },
         {
 
             title: "Title 6",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
-
+            img: require("../../static/bg1.jpeg")
         },
         {
 
             title: "Title 7",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
-
+            img: require("../../static/bg1.jpeg")
         },
         {
 
             title: "Title 8",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
-
+            img: require("../../static/bg1.jpeg")
         },
         {
 
             title: "Title 9",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
-
+            img: require("../../static/bg1.jpeg")
         },
         {
 
             title: "Title 10",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
-
+            img: require("../../static/bg1.jpeg")
         },
         {
 
             title: "Title 11",
             Message: "This is the message body",
-            img: "../../static/bg1.jpeg"
+            img: require("../../static/bg1.jpeg")
+        },
+        {
 
-        }
+            title: "Title 12",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg")
+        },
+        {
 
+            title: "Title 13",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg")
+        },
+        {
+
+            title: "Title 14",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg")
+        },
+        {
+
+            title: "Title 15",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg")
+        },
+        
 
     ]);
     const arr = [];
@@ -122,7 +139,7 @@ function Homepage() {
                                     <td className={styles.mblog}>
 
                                         <div className={styles.nblock}>
-                                            <img src={bg1} alt="image" className={styles.imgCont}></img>
+                                            <img src={ele.img} className={styles.imgCont}></img>
                                             <h2 className={styles.titleCont}>{ele.title}</h2>
                                             <p className={styles.bodyCont}>{ele.Message}</p>
 
