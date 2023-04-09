@@ -13,9 +13,12 @@ function WebBase() {
     const navigate = useNavigate()
     
     document.body.style.backgroundImage = `url(${back})`;
-    document.body.style.backgroundSize = "1600px 900px"
+    document.body.style.backgroundSize = "1600px 900px";
+    
+
     return (
          
+
 
         <div className={styles.grid_lay}>
             
