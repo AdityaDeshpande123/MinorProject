@@ -1,4 +1,6 @@
-import styles from './Signpage.module.css'
+
+
+import style from './Signpage.module.css'
 import back from './bg1.jpg'
 
 function Signpage() {
@@ -8,12 +10,12 @@ function Signpage() {
     document.body.style.backgroundSize = "1600px 900px"
     return (
 
-        <div>
+        <div className={style.sign_form}>
 
             <form className='sign_form'>
                 <h2 className='sign_h2'>BLOGOSPHERE</h2>
                 
-                <label>Enter your name by Ashwin</label><br></br>
+                <label>Enter your name by </label><br></br>
                 <label>Login ID</label><br></br>
                 <input type='text'></input> <br></br><br></br>
                 <label>Password</label><br></br>
