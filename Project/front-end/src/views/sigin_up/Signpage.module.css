@@ -1,16 +1,16 @@
-.text-center {
+.text_center {
     position: relative;
     left:60px;
   }
 
-  .link-primary {
+  .link_primary {
     color:blue;
     cursor: pointer;
   }
-  .link-primary:hover {
+  .link_primary:hover {
     text-decoration: underline;
   }
-  .Auth-form-container {
+  .Auth_form_container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@
     height: 100vh;
   }
   
-  .Auth-form {
+  .Auth_form {
     width: 420px;
     box-shadow: rgb(0 0 0 / 16%) 5px 5px 10px;
     padding-top: 30px;
@@ -27,12 +27,12 @@
     background-color: rgb(255, 252, 249);
   }
   
-  .Auth-form-content {
+  .Auth_form_content {
     padding-left: 12%;
     padding-right: 12%;
   }
   
-  .Auth-form-title {
+  .Auth_form_title {
     text-align: center;
     margin-bottom: 1em;
     font-size: 24px;
@@ -46,20 +46,20 @@
     color: rgb(34, 34, 34);
   }
 
-  .form-group {
+  .form_group {
     size: bold;
     padding: 4px;
     padding-left:30px;
     
   }
 
-  .form-control {
+  .form_control {
     padding: 4px;
     border: 0.5px rgb(139, 139, 139) solid;
     border-radius: 3px;
   }
 
-  .d-grid {
+  .d_grid {
     padding:12px;
     padding-left: 70px;
   }
