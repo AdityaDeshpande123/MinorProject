@@ -7,7 +7,7 @@ function Signpage() {
     <div>
     <Auth></Auth>
     </div>
-  )
+)
 }
 
 export default Signpage
