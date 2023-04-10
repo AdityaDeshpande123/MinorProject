@@ -1,27 +1,82 @@
-form{
+.text-center {
+    position: relative;
+    left:60px;
+  }
 
-    background-color: white;
-    width: 400px;
-    height: 350px;
+  .link-primary {
+    color:blue;
+    cursor: pointer;
+  }
+  .link-primary:hover {
+    text-decoration: underline;
+  }
+  .Auth-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .Auth-form {
+    width: 420px;
+    box-shadow: rgb(0 0 0 / 16%) 5px 5px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background-color: rgb(255, 252, 249);
+  }
+  
+  .Auth-form-content {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+  
+  .Auth-form-title {
     text-align: center;
-    vertical-align: centre;
-    border-radius: 30px;
-    position: absolute;
-    top: 200px;
-    left: 500px;
+    margin-bottom: 1em;
+    font-size: 24px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+  }
+
+  .form-group {
+    size: bold;
+    padding: 4px;
+    padding-left:30px;
     
+  }
 
+  .form-control {
+    padding: 4px;
+    border: 0.5px rgb(139, 139, 139) solid;
+    border-radius: 3px;
+  }
 
-}
+  .d-grid {
+    padding:12px;
+    padding-left: 70px;
+  }
+  .btn {
+    border-radius:5px;
+    padding:5px 60px;
+    cursor: pointer;
+    font-size: 14px;
+    background-image: linear-gradient(135deg, rgb(3, 235, 3) , yellow);
+  }
 
-h2{
-    padding-top: 50px;
-    padding-bottom: 50px;
+  .btn:hover{
+    box-shadow: rgb(103, 103, 103) 2px 2px 2px;
+    background-image: linear-gradient(135deg, rgb(208, 255, 0) , rgb(255, 213, 0));
+  }
 
-}
-button{
-
-    font-size: 15px;
-    padding: 5px;
-
-}
+  .tname {
+    padding-left: 35px;
+    font-size: 22px;
+  }

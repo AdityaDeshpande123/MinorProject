@@ -1,40 +1,12 @@
-import style from './Signpage.module.css'
-import back from './bg1.jpg'
+import "./Signpage.module.css"
+
+import Auth from "./Auth"
 
 function Signpage() {
+  return (
+    <Auth></Auth>
     
-
-    document.body.style.backgroundImage = `url(${back})`;
-    document.body.style.backgroundSize = "1600px 900px"
-    return (
-
-        <div className={style.sign_form}>
-
-            <form className='sign_form'>
-                <h2 className='sign_h2'>BLOGOSPHERE</h2>
-                
-                <label>Enter your name by </label><br></br>
-                <label>Login ID</label><br></br>
-                <input type='text'></input> <br></br><br></br>
-                <label>Password</label><br></br>
-                <input type='text'></input> <br></br><br></br>
-
-                <button className='sign_button'>Signup</button>
-                <button className='sign_button'>Login</button>
-
-
-
-
-            </form>
-
-
-        </div>
-
-
-    );
-
-
-
+  )
 }
 
 export default Signpage
