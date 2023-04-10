@@ -27,7 +27,7 @@ export default function (props) {
               <input
                 type="email"
                 className="form-control mt-1"
-                placeholder="Enter  email"
+                placeholder="Enter email"
                 size="30"
               />
             </div>
