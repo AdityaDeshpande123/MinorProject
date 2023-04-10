@@ -1,4 +1,4 @@
-.sign_form{
+form{
 
     background-color: white;
     width: 400px;
@@ -14,12 +14,12 @@
 
 }
 
-.sign_h2{
+h2{
     padding-top: 50px;
     padding-bottom: 50px;
 
 }
-.sign_button{
+button{
 
     font-size: 15px;
     padding: 5px;

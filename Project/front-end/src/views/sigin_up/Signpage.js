@@ -1,5 +1,3 @@
-
-
 import style from './Signpage.module.css'
 import back from './bg1.jpg'
 
@@ -36,7 +34,7 @@ function Signpage() {
     );
 
 
+
 }
 
-
-export default Signpage;
+export default Signpage
