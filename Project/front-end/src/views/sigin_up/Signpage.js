@@ -1,11 +1,10 @@
-import "./Signpage.module.css"
-
 import Auth from "./Auth"
 
 function Signpage() {
   return (
+    <div>
     <Auth></Auth>
-    
+    </div>
   )
 }
 

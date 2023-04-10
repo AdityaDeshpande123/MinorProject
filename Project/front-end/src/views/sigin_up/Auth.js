@@ -1,4 +1,4 @@
-
+import style from "./Signpage.module.css"
 import React, { useState } from "react"
 
 export default function (props) {
@@ -11,41 +11,41 @@ export default function (props) {
   document.body.style.backgroundImage="../static/signbg.jpg";
   if (authMode === "signin") {
     return (
-      <div className="Auth-form-container">
-        <form className="Auth-form">
-          <div className="Auth-form-content">
-          <h3 className="tname"> Welcome to Blogosphere!</h3>
-            <h3 className="Auth-form-title">Sign In</h3>
-            <div className="text-center">
+      <div className={style.Auth_form_container}>
+        <form className={style.Auth_form}>
+          <div className={style.Auth_form_content}>
+          <h3 className={style.tname}> Welcome to Blogosphere!</h3>
+            <h3 className={style.Auth_form_title}>Sign In</h3>
+            <div className={style.text_center}>
               Not registered yet?{" "}
-              <span className="link-primary" onClick={changeAuthMode}>
+              <span className={style.link_primary} onClick={changeAuthMode}>
                Sign Up
               </span><br></br><br></br>
             </div>
-            <div className="form-group mt-3">
+            <div className={style.form_group}>
               <label>Email address: </label><pre></pre>
               <input
                 type="email"
-                className="form-control mt-1"
+                className={style.form_control}
                 placeholder="Enter email"
                 size="32"
               />
             </div>
-            <div className="form-group mt-3">
+            <div className={style.form_group}>
               <label>Password: </label><pre></pre>
               <input
                 type="password"
-                className="form-control mt-1"
+                className={style.form_control}
                 placeholder="Enter password"
                 size="30"
               />
             </div>
-            <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
+            <div className={style.d_grid}>
+              <button type="submit" className={style.btn}>
                 Sign In
               </button>
             </div>
-            <p className="text-center mt-2">
+            <p className={style.text_center}>
               Forgot <a href="#">password?</a>
             </p>
           </div>
@@ -55,46 +55,46 @@ export default function (props) {
   }
 
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-         <h3 className="tname"> Welcome to Blogosphere!</h3>
-          <h3 className="Auth-form-title">Sign Up</h3>
-          <div className="text-center">
+    <div className={style.Auth_form_container}>
+      <form className={style.Auth_form}>
+        <div className={style.Auth_form_content}>
+         <h3 className={style.tname}> Welcome to Blogosphere!</h3>
+          <h3 className={style.Auth_form_title}>Sign Up</h3>
+          <div className={style.text_center}>
             Already registered?{" "}
-            <span className="link-primary" onClick={changeAuthMode}>
+            <span className={style.link_primary} onClick={changeAuthMode}>
               Sign In
             </span><br></br><br></br>
           </div>
-          <div className="form-group mt-3">
+          <div className={style.form_group}>
             <label>Full Name</label><pre></pre>
             <input
               type="name"
-              className="form-control mt-1"
+              className={style.form_control}
               placeholder="e.g Jane Doe"
               size="30"
             />
           </div>
-          <div className="form-group mt-3">
+          <div className={style.form_group}>
             <label>Email address</label><pre></pre>
             <input
               type="email"
-              className="form-control mt-1"
+              className={style.form_control}
               placeholder="Email Address"
                size="30"
               />
           </div>
-          <div className="form-group mt-3">
+          <div className={style.form_group}>
             <label>Password</label><pre></pre>
             <input
               type="password"
-              className="form-control mt-1"
+              className={style.form_control}
               placeholder="Password"
               size="30"
               />
           </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
+          <div className={style.d_grid}>
+            <button type="submit" className={style.btn}>
               Sign Up
             </button>
           </div>
