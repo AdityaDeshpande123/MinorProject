@@ -32,7 +32,7 @@ export default function (props) {
               />
             </div>
             <div className={style.form_group}>
-              <label>Password: </label><pre></pre>
+              <label>Enter Password: </label><pre></pre>
               <input
                 type="password"
                 className={style.form_control}
