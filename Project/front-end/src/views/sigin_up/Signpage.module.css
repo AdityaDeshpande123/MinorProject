@@ -24,7 +24,8 @@
     padding-top: 30px;
     padding-bottom: 20px;
     border-radius: 8px;
-    background-color: rgb(255, 252, 249);
+    background-color: rgb(244, 227, 210);
+    opacity: 0.9;
   }
   
   .Auth_form_content {
@@ -56,7 +57,7 @@
   .form_control {
     padding: 4px;
     border: 0.5px rgb(139, 139, 139) solid;
-    border-radius: 3px;
+    border-radius: 12px;
   }
 
   .d_grid {
