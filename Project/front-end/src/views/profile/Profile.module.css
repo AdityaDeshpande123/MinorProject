@@ -1,0 +1,85 @@
+.profileview{
+    
+    height: 745px;
+    width: 30%;
+    background-color: white;
+    opacity: 0.7;
+    background-image: url("../../static/dash123.png");
+    background-size: 250px 250px;
+    background-repeat: no-repeat;
+    background-position-y: 550px;
+    background-position-x: 210px;
+    
+}
+.proimg{
+    height: 130px;
+    padding: 20px;
+}
+
+.prname{
+    position: absolute;
+    left : 200px;
+    top : 50px;
+    font-size: 35px;
+    width: 100px;
+
+}
+.prabout{
+    padding: 25px;
+    width: auto;
+    text-align: justify;
+    height: 430px;
+}
+
+.wrdetails{
+    padding: 20px;
+    width: auto;
+    font-size: 20px;
+
+    
+}
+
+.pblogs{
+    font-size: 15px;
+    position: absolute;
+    top: 40px;
+    left: 500px;
+    height: 80px;
+    width: 500px;
+    background-color: white;
+    opacity: 0.7;
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 30px;
+    transition: 0.2s;
+    background-image: url("../../static/pencils.jpeg");
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    
+}
+.pblogs:hover{
+    transform: scale(1.05);
+}
+.sblogs
+{
+    font-size: 15px;
+    position: absolute;
+    top: 40px;
+    left: 1020px;
+    height: 80px;
+    width: 500px;
+    background-color: white;
+    opacity: 0.7;
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 30px;
+    transition: 0.2s;
+    background-image: url("../../static/editing.jpg");
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position-x: 380px;
+    
+}
+.sblogs:hover{
+    transform: scale(1.05);
+}
