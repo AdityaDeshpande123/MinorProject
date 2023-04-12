@@ -1,0 +1,50 @@
+.heading{
+    text-align: center;
+}
+
+.blogcreate{
+    padding-top: 20px;
+    
+}
+
+.createform{
+    position: relative;
+}
+
+.createformdiv{
+    padding-top: 20px;
+    margin-left: 250px;
+    align-items: center;
+}
+
+.titleinput{
+    font-size: 30px;
+    padding: 8px;
+    border-radius: 13px;
+    width: 50vw;
+    color: black;
+}
+
+.textinput{
+    font-size: 20px;
+    border: none;
+    padding: 20px;
+    width: 70vw;
+    height: 350px;
+    opacity: 0.7;
+    color: black;
+    background-color: ghostwhite;
+}
+
+.blogsubmit{
+    position: fixed;
+    top: 570px;
+    left: 255px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+}
