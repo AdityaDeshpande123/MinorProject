@@ -12,8 +12,10 @@
     
 }
 .proimg{
-    height: 130px;
-    padding: 20px;
+    height: 145px;
+    width: 145px;
+    padding: 15px;
+    border-radius: 50%;
 }
 
 .prname{
@@ -28,7 +30,7 @@
     padding: 25px;
     width: auto;
     text-align: justify;
-    height: 430px;
+    height: 400px;
 }
 
 .wrdetails{
@@ -43,7 +45,7 @@
     font-size: 15px;
     position: absolute;
     top: 40px;
-    left: 500px;
+    left: 490px;
     height: 80px;
     width: 500px;
     background-color: white;
@@ -65,7 +67,7 @@
     font-size: 15px;
     position: absolute;
     top: 40px;
-    left: 1020px;
+    left: 1010px;
     height: 80px;
     width: 500px;
     background-color: white;
@@ -82,4 +84,75 @@
 }
 .sblogs:hover{
     transform: scale(1.05);
+}
+
+.analytics{
+
+    position: absolute;
+    left: 490px;
+    top: 200px;
+    height: 540px;
+    width: 1020px;
+    /* background-color: white; */
+    opacity: 0.7;
+    border-radius: 20px;
+    overflow: scroll;
+
+}
+.analytics::-webkit-scrollbar { width: 0 !important }
+.tviews{
+    position: absolute;
+    left: 80px;
+    font-size: 15px;
+    font-weight: 500;
+    width: 250px;
+    height: 70px;
+    background-color:white;
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 20px;
+
+}
+
+.tviews span{
+    font-size: 30px;
+    font-weight: 800;
+}
+.tblogs{
+    position: absolute;
+    left: 390px;
+    top: 0 px;
+    font-size: 15px;
+    font-weight: 500;
+    width: 250px;
+    height: 70px;
+    background-color: white;
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 20px;
+
+}
+
+.tblogs span{
+    font-size: 30px;
+    font-weight: 800;
+}
+.tlikes{
+    position: absolute;
+    left: 700px;
+    top: 0 px;
+    font-size: 15px;
+    font-weight: 500;
+    width: 250px;
+    height: 70px;
+    background-color: white;
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 20px;
+
+}
+
+.tlikes span{
+    font-size: 30px;
+    font-weight: 800;
 }
