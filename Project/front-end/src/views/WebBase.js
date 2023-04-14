@@ -24,7 +24,8 @@ function WebBase() {
             
             <div className={styles.mainHeader}>
 
-                <h1 className={styles.base_h1}>BLOGOSPHERE</h1>
+                <h1 className={styles.base_h1}>BLOGOSPHERE <button onClick={()=> navigate('createblog')} className={styles.wrBlog}>Write a blog</button></h1>
+                
 
             </div>
 
