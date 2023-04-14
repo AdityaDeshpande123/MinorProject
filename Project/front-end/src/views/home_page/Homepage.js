@@ -116,6 +116,7 @@ function Homepage() {
         <div>
 
             <WebBase></WebBase>
+            
             <div className={styles.searchBar}>
 
                 <input type="text" className={styles.search}></input>
