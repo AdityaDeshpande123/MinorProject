@@ -15,7 +15,7 @@ function App() {
 
     <div>
 
-      <BrowserRouter>
+      {/*<BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage></Homepage>}></Route>
           <Route path='signup' element={<Signpage></Signpage>}></Route>
@@ -24,7 +24,9 @@ function App() {
         </Routes>
 
 
-  </BrowserRouter>
+  </BrowserRouter>*/}
+
+  <Tempone></Tempone>
   
 
     </div>
