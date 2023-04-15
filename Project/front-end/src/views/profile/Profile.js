@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import styles from './Profile.module.css'
 import ppic from '../../static/author.jpeg'
 import back from '../../static/dashback1.jpg'
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 function Profile() {
-     document.body.style.backgroundImage = `url(${back})`;
+    document.body.style.backgroundImage = `url(${back})`;
     // document.body.style.backgroundColor = "rgba(101,99,99,255)"
     document.body.style.backgroundSize = "1600px 800px";
     document.body.style.backgroundRepeat = "no-repeat";
@@ -14,8 +15,79 @@ function Profile() {
         nblogs: "2",
         pviews: "2",
         popularity: "30%",
-        likes : "100"
+        likes: "100"
     };
+    const data = [
+        {
+            Year: '2021',
+            Views: 24,
+            Likes: 12
+        },
+        {
+            Year: '2022',
+            Views: 26,
+            Likes: 13
+        },
+        {
+            Year: '2023',
+            Views: 30,
+            Likes: 15
+        },
+        {
+            Year: '2024',
+            Views: 18,
+            Likes: 6
+        },
+        {
+            Year: '2025',
+            Views: 35,
+            Likes: 20
+
+        },
+        {
+            Year: '2025',
+            Views: 35,
+            Likes: 20
+
+        },
+        {
+            Year: '2025',
+            Views: 35,
+            Likes: 20
+
+        },
+        {
+            Year: '2025',
+            Views: 35,
+            Likes: 20
+
+        },
+        {
+            Year: '2025',
+            Views: 35,
+            Likes: 20
+
+        },
+        {
+            Year: '2025',
+            Views: 35,
+            Likes: 20
+
+        },
+        {
+            Year: '2025',
+            Views: 35,
+            Likes: 20
+
+        },
+        {
+            Year: '2025',
+            Views: 35,
+            Likes: 20
+
+        },
+
+    ]
     return (
         <div>
 
@@ -63,7 +135,50 @@ function Profile() {
 
                 </p>
 
-                
+                <div className={styles.analytics1}>
+                    <h1 className={styles.barheader}>
+                        Total 100 Views this year
+                        <label>Sort By</label>
+                        <select>
+                            <option>Current</option>
+                            <option value="Year">Year</option>
+                            <option value="Month">Month</option>
+                            <option value="Day">Day</option>
+
+
+
+                        </select>
+                    </h1>
+
+                    <BarChart
+                        width={1000}
+                        height={400}
+                        data={data}
+                        margin={{
+                            top: 10,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                        className={styles.barChart}
+
+                    >
+
+
+                        <XAxis dataKey="Year" fill="green" />
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <Bar dataKey="Views" fill="rgba(51,115,232,255)" />
+                        <Bar dataKey="Likes" fill="rgba(248,193,48,255)"></Bar>
+
+                    </BarChart>
+
+
+
+                </div>
+
+
 
 
             </div>
