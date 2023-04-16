@@ -5,6 +5,7 @@ import Homepage from './views/home_page/Homepage';
 import Card from './views/card-view/Card';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from './views/profile/Profile';
+import Template3 from './views/blog_create/template/Template1';
 function App() {
 
   return (
@@ -19,7 +20,7 @@ function App() {
         </Routes>
 
 
-      </BrowserRouter>
+  </BrowserRouter>
 
     </div>
 

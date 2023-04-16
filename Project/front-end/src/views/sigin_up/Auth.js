@@ -1,5 +1,6 @@
 import style from "./Signpage.module.css"
 import React, { useState } from "react"
+import signinner from '../../static/signinner.jpg'
 
 export default function (props) {
   let [authMode, setAuthMode] = useState("signin")
@@ -8,7 +9,8 @@ export default function (props) {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
 
   }
-  
+  document.body.style.backgroundImage=`url(${signinner})`;
+  document.body.style.backgroundSize = "1600px 900px";
   if (authMode === "signin") {
     return (
       <div className={style.Auth_form_container}>
@@ -32,7 +34,7 @@ export default function (props) {
               />
             </div>
             <div className={style.form_group}>
-              <label>Password: </label><pre></pre>
+              <label>Please Enter Password: </label><pre></pre>
               <input
                 type="password"
                 className={style.form_control}
