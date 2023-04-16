@@ -46,6 +46,9 @@ export default function (props) {
               <button type="submit" className={style.btn}>
                 Sign In
               </button>
+            <button type="reset" className={style.btn_reset}>
+              Reset
+            </button>
             </div>
             <p className={style.text_center}>
               Forgot <a href="#">password?</a>
@@ -98,6 +101,9 @@ export default function (props) {
           <div className={style.d_grid}>
             <button type="submit" className={style.btn}>
               Sign Up
+            </button>
+            <button type="reset" className={style.btn_reset}>
+              Reset
             </button>
           </div>
         </div>

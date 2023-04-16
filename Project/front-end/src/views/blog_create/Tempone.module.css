@@ -1,0 +1,118 @@
+.headdiv{
+    background-color: black;
+    height: 80px;
+}
+
+.heading{
+    margin-left: 250px;
+    padding-top: 20px;
+    position: absolute;
+    color: white;
+}
+
+.blogcreate{
+    padding-top: 0px;
+    
+}
+
+.createform{
+    position: relative;
+}
+
+.createformdiv{
+    padding-top: 20px;
+    margin-left: 250px;
+    align-items: center;
+}
+
+.titleinput{
+    font-size: 30px;
+    padding: 8px;
+    border-radius: 13px;
+    width: 50vw;
+    color: black;
+}
+
+.textinput{
+    font-size: 20px;
+    border: none;
+    padding: 20px;
+    width: 70vw;
+    height: 350px;
+    opacity: 0.7;
+    color: black;
+    background-color: ghostwhite;
+}
+
+.blogsubmit{
+    position: fixed;
+    top: 580px;
+    left: 255px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: rgb(43, 210, 46);
+    color: white;
+}
+
+.blogsave{
+    position: fixed;
+    top: 580px;
+    left: 400px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: red;
+    color: white;
+}
+
+.bold{
+    position: relative;
+    top: 25px;
+    left: 900px;
+    padding: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: azure;
+    color: black;
+}
+
+.italic{
+    position: relative;
+    top: 25px;
+    left: 1000px;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: azure;
+    color: black;
+}
+
+
+.dropdown{
+    position: absolute;
+    padding-top: 30px;
+    padding-left: 600px;
+    color: aliceblue;
+}
+
+.dropdownoptions{
+  position: absolute;
+  margin-left: 727px;
+  margin-top: 32px;
+
+}
