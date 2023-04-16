@@ -17,77 +17,216 @@ function Profile() {
         popularity: "30%",
         likes: "100"
     };
-    const data = [
+    
+    let datayear = [
+        
         {
-            Year: '2021',
+            Para: '2021',
             Views: 24,
             Likes: 12
         },
         {
-            Year: '2022',
+            Para: '2022',
             Views: 26,
             Likes: 13
         },
         {
-            Year: '2023',
+            Para: '2023',
             Views: 30,
             Likes: 15
         },
         {
-            Year: '2024',
+            Para: '2024',
             Views: 18,
             Likes: 6
         },
         {
-            Year: '2025',
+            Para: '2025',
             Views: 35,
             Likes: 20
 
         },
         {
-            Year: '2025',
-            Views: 35,
-            Likes: 20
+            Para: '2025',
+            Views: 31,
+            Likes: 23
 
         },
         {
-            Year: '2025',
-            Views: 35,
-            Likes: 20
+            Para: '2025',
+            Views: 45,
+            Likes: 32
 
         },
         {
-            Year: '2025',
-            Views: 35,
-            Likes: 20
+            Para: '2025',
+            Views: 50,
+            Likes: 35
 
         },
         {
-            Year: '2025',
-            Views: 35,
-            Likes: 20
+            Para: '2025',
+            Views: 45,
+            Likes: 25
 
         },
         {
-            Year: '2025',
-            Views: 35,
-            Likes: 20
+            Para: '2025',
+            Views: 60,
+            Likes: 50
 
         },
         {
-            Year: '2025',
-            Views: 35,
-            Likes: 20
+            Para: '2025',
+            Views: 42,
+            Likes: 23
 
         },
         {
-            Year: '2025',
-            Views: 35,
-            Likes: 20
+            Para: '2025',
+            Views: 90,
+            Likes: 80
 
         },
 
-    ]
+    ];
+    let datamonth = [
+
+        {
+            Para: 'Jan',
+            Views: 14,
+            Likes: 6
+        },
+        {
+            Para: 'Feb',
+            Views: 13,
+            Likes: 6
+        },
+        {
+            Para: 'Mar',
+            Views: 15,
+            Likes: 3
+        },
+        {
+            Para: 'Apr',
+            Views: 9,
+            Likes: 2
+        },
+        {
+            Para: 'May',
+            Views: 6,
+            Likes: 2
+
+        },
+        {
+            Para: 'Jun',
+            Views: 21,
+            Likes: 10
+
+        },
+        {
+            Para: 'Jul',
+            Views: 21,
+            Likes: 8
+
+        },
+        {
+            Para: 'Aug',
+            Views: 50,
+            Likes: 35
+
+        },
+        {
+            Para: 'Sep',
+            Views: 45,
+            Likes: 25
+
+        },
+        {
+            Para: 'Oct',
+            Views: 60,
+            Likes: 50
+
+        },
+        {
+            Para: 'Nov',
+            Views: 42,
+            Likes: 23
+
+        },
+        {
+            Para: 'Dec',
+            Views: 90,
+            Likes: 80
+
+        }
+
+
+    ];
+
+    let dataDay = [
+        {
+            Para : "Mon",
+            Views : 3,
+            Likes : 1
+
+        },
+        {
+            Para : "Tue",
+            Views : 4,
+            Likes : 2
+
+        },
+        {
+            Para : "Wed",
+            Views : 5,
+            Likes : 3
+
+        },
+        {
+            Para : "Thu",
+            Views : 2,
+            Likes : 1
+
+        },
+        {
+            Para : "Fri",
+            Views : 8,
+            Likes : 3
+
+        },
+        {
+            Para : "Sat",
+            Views : 12,
+            Likes : 8
+
+        },
+        {
+            Para : "Sun",
+            Views : 20,
+            Likes : 10
+
+        }
+
+
+    ];
+
+    const [datas,setDatas] = useState(datayear);
+
+    function sortAnalytics()
+    {
+       let str = document.getElementById('drop').value;
+       if(str==="Year")
+       setDatas(datayear);
+       else if(str==="Month")
+       setDatas(datamonth)
+       else if(str==="Day")
+       setDatas(dataDay)
+    
+    }
+
+
+
     return (
         <div>
 
@@ -136,24 +275,26 @@ function Profile() {
                 </p>
 
                 <div className={styles.analytics1}>
-                    <h1 className={styles.barheader}>
-                        Total 100 Views this year
-                        <label>Sort By</label>
-                        <select>
-                            <option>Current</option>
-                            <option value="Year">Year</option>
-                            <option value="Month">Month</option>
-                            <option value="Day">Day</option>
+                    <p className={styles.barheader}>
+                        Total Views :<strong>100 </strong>
+                    </p>
+
+                    <div className={styles.seanalytics}>
+                            <label>Sort By</label>
+                            <select onChange={sortAnalytics} id="drop">
+                                <option value="Year">Year</option>
+                                <option value="Month">Month</option>
+                                <option value="Day">Day</option>
+                            </select>
+
+                        </div>
 
 
 
-                        </select>
-                    </h1>
-
-                    <BarChart
-                        width={1000}
-                        height={400}
-                        data={data}
+                    <BarChart id="userbar"
+                        width={800}
+                        height={500}
+                        data={datas}
                         margin={{
                             top: 10,
                             right: 30,
@@ -165,7 +306,7 @@ function Profile() {
                     >
 
 
-                        <XAxis dataKey="Year" fill="green" />
+                        <XAxis dataKey="Para" fill="green" />
                         <YAxis />
                         <Tooltip />
                         <Legend />
