@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from './Profile.module.css'
 import ppic from '../../static/author.jpeg'
-import back from '../../static/dashback1.jpg'
+import back from '../../static/dashback2.jpg'
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { PieChart, Pie } from 'recharts';
 import Pichart from './pichart/Pichart.js'
