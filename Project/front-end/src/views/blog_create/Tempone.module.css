@@ -1,5 +1,5 @@
 .headdiv{
-    background-color: black;
+    background-color: dimgrey;
     height: 80px;
 }
 
@@ -45,8 +45,8 @@
 }
 
 .blogsubmit{
-    position: fixed;
-    top: 580px;
+    position: absolute;
+    top: 510px;
     left: 255px;
     padding: 10px;
     padding-left: 25px;
@@ -60,8 +60,8 @@
 }
 
 .blogsave{
-    position: fixed;
-    top: 580px;
+    position: absolute;
+    top: 510px;
     left: 400px;
     padding: 10px;
     border: none;
@@ -73,46 +73,61 @@
 }
 
 .bold{
-    position: relative;
+    position: absolute;
     top: 25px;
-    left: 900px;
+    left: 890px;
     padding: 7px;
     padding-left: 8px;
     padding-right: 8px;
     border: none;
-    border-radius: 7px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 20px;
     background-color: azure;
     color: black;
 }
 
+.bold:hover{
+    padding: 12px;
+    background-color: aqua;
+    font-weight: bold;
+}
+
 .italic{
-    position: relative;
+    position: absolute;
     top: 25px;
     left: 1000px;
     padding: 7px;
     padding-left: 10px;
     padding-right: 10px;
     border: none;
-    border-radius: 7px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 20px;
     background-color: azure;
     color: black;
 }
 
+.italic:hover{
+    padding: 12px;
+    background-color: aqua;
+    font-weight: bold;
+
+}
+
 
 .dropdown{
+    font-size: 22px;
     position: absolute;
-    padding-top: 30px;
-    padding-left: 600px;
+    padding-top: 27px;
+    padding-left: 620px;
     color: aliceblue;
 }
 
 .dropdownoptions{
   position: absolute;
-  margin-left: 727px;
-  margin-top: 32px;
-
+  margin-left: 720px;
+  margin-top: 30px;
+  border-radius: 30px;
+  padding: 5px;
 }
