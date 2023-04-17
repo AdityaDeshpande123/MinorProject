@@ -12,15 +12,15 @@ function Tempone() {
             <h1 className={styles.heading}>BLOGOSPHERE</h1>
 
             
-            <label for="choosetemplate" className={styles.dropdown}>Choose a Template</label>
+            <label for="choosetemplate" className={styles.dropdown}>Template</label>
                 <select name="choosetemplate" id="choosetemplate" className={styles.dropdownoptions}>
                     <option value="temp1">Template 1</option>
                     <option value="temp2">Template 2</option>
                     <option value="temp3">Template 3</option>
                 </select>
 
-                <button className={styles.bold}>B</button>
-                <button className={styles.italic}>I</button>
+                <button className={styles.bold}>Bold</button>
+                <button className={styles.italic}>Italic</button>
 
 
         </div>
