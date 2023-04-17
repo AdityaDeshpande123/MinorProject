@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import styles from './Profile.module.css'
 import ppic from '../../static/author.jpeg'
 import back from '../../static/dashback1.jpg'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { PieChart, Pie } from 'recharts';
+import Pichart from './pichart/Pichart.js'
+import dataany from '../../static/dataany.png'
 function Profile() {
     document.body.style.backgroundImage = `url(${back})`;
     // document.body.style.backgroundColor = "rgba(101,99,99,255)"
@@ -17,9 +20,9 @@ function Profile() {
         popularity: "30%",
         likes: "100"
     };
-    
+
     let datayear = [
-        
+
         {
             Para: '2021',
             Views: 24,
@@ -166,63 +169,77 @@ function Profile() {
 
     let dataDay = [
         {
-            Para : "Mon",
-            Views : 3,
-            Likes : 1
+            Para: "Mon",
+            Views: 3,
+            Likes: 1
 
         },
         {
-            Para : "Tue",
-            Views : 4,
-            Likes : 2
+            Para: "Tue",
+            Views: 4,
+            Likes: 2
 
         },
         {
-            Para : "Wed",
-            Views : 5,
-            Likes : 3
+            Para: "Wed",
+            Views: 5,
+            Likes: 3
 
         },
         {
-            Para : "Thu",
-            Views : 2,
-            Likes : 1
+            Para: "Thu",
+            Views: 2,
+            Likes: 1
 
         },
         {
-            Para : "Fri",
-            Views : 8,
-            Likes : 3
+            Para: "Fri",
+            Views: 8,
+            Likes: 3
 
         },
         {
-            Para : "Sat",
-            Views : 12,
-            Likes : 8
+            Para: "Sat",
+            Views: 12,
+            Likes: 8
 
         },
         {
-            Para : "Sun",
-            Views : 20,
-            Likes : 10
+            Para: "Sun",
+            Views: 20,
+            Likes: 10
 
         }
 
 
     ];
 
-    const [datas,setDatas] = useState(datayear);
+    let piedata = [
+        {
+            type: "Travel",
+            bpub: 3
+        },
+        {
+            type: "Food",
+            bpub: 2
+        },
+        {
+            type: "Automobile",
+            bpub: 4
+        }
+    ];
 
-    function sortAnalytics()
-    {
-       let str = document.getElementById('drop').value;
-       if(str==="Year")
-       setDatas(datayear);
-       else if(str==="Month")
-       setDatas(datamonth)
-       else if(str==="Day")
-       setDatas(dataDay)
-    
+    const [datas, setDatas] = useState(datayear);
+
+    function sortAnalytics() {
+        let str = document.getElementById('drop').value;
+        if (str === "Year")
+            setDatas(datayear);
+        else if (str === "Month")
+            setDatas(datamonth)
+        else if (str === "Day")
+            setDatas(dataDay)
+
     }
 
 
@@ -280,14 +297,14 @@ function Profile() {
                     </p>
 
                     <div className={styles.seanalytics}>
-                            <label>Sort By</label>
-                            <select onChange={sortAnalytics} id="drop">
-                                <option value="Year">Year</option>
-                                <option value="Month">Month</option>
-                                <option value="Day">Day</option>
-                            </select>
+                        <label>Sort By</label>
+                        <select onChange={sortAnalytics} id="drop">
+                            <option value="Year">Year</option>
+                            <option value="Month">Month</option>
+                            <option value="Day">Day</option>
+                        </select>
 
-                        </div>
+                    </div>
 
 
 
@@ -314,6 +331,14 @@ function Profile() {
                         <Bar dataKey="Likes" fill="rgba(248,193,48,255)"></Bar>
 
                     </BarChart>
+
+                    <div className={styles.pieChar}>
+                        <p>Total Blogs Published<br></br><span>{arr.nblogs}</span></p>
+                       
+                    </div>
+                    <br></br><br></br><br></br>
+                    <Pichart></Pichart>
+                   
 
 
 
