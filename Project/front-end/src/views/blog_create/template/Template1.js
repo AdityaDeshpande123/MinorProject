@@ -28,12 +28,16 @@ function Template() {
              
             </div> <br></br><hr className={style.line}></hr>
             <div className={style.t1}>
-
+            <div className={style.text1}>
+            </div>
             <div className={style.iim}>
             </div>
-
+            <div className={style.text3}>
+            </div>
             </div>
             <div className={style.rights}>
+            </div>
+            <div className={style.rtext}>
             </div>
             </div>
             <footer className={style.About}>

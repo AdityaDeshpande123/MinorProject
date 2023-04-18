@@ -26,15 +26,9 @@
     box-shadow: rgb(0 0 0 / 16%) 5px 5px 10px;
     padding-top: 30px;
     padding-bottom: 20px;
-<<<<<<< HEAD
-    border-radius: 8px;
-    background-color: rgb(244, 227, 210);
-    opacity: 0.9;
-=======
     border-radius: 25px;
     background-color: rgb(255, 252, 249);
     opacity: 0.85;
->>>>>>> f8f2c60edf7d22fa654bfe77870a10913a19f43b
   }
   
   .Auth_form_content {
@@ -67,11 +61,7 @@
     font-size: 11pt;
     padding: 4px;
     border: 0.5px rgb(139, 139, 139) solid;
-<<<<<<< HEAD
-    border-radius: 12px;
-=======
     border-radius: 7px;
->>>>>>> f8f2c60edf7d22fa654bfe77870a10913a19f43b
   }
 
   .d_grid {

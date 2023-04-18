@@ -141,3 +141,27 @@
     bottom: 110vh;
     box-shadow: rgb(103, 103, 103) 1.5px 1.5px 1.5px;
 }
+
+.text1{
+    position: absolute;
+    left:10px;
+    top:10px;
+    width: 95vh;
+    height: 70vh;
+}
+
+.text3{ 
+    position: absolute;
+    left:50vh;
+    top:75vh;
+    width: 46vh;
+    height: 38vh;
+}
+
+.rtext{   
+    position: absolute;
+    left:103vh;
+    top:105vh;
+    width:39vh;
+    height:65vh;
+}
