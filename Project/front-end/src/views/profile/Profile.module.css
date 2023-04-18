@@ -3,7 +3,7 @@
     height: 745px;
     width: 30%;
     background-color: white;
-    opacity: 0.7;
+    opacity: 0.8;
     background-image: url("../../static/dash123.png");
     background-size: 250px 250px;
     background-repeat: no-repeat;
@@ -49,7 +49,7 @@
     height: 80px;
     width: 500px;
     background-color: white;
-    opacity: 0.7;
+    opacity: 0.8;
     text-align: center;
     border-radius: 20px;
     padding-top: 30px;
@@ -71,7 +71,7 @@
     height: 80px;
     width: 500px;
     background-color: white;
-    opacity: 0.7;
+    opacity: 0.8;
     text-align: center;
     border-radius: 20px;
     padding-top: 30px;
@@ -94,7 +94,7 @@
     height: 540px;
     width: 1020px;
     /* background-color: white; */
-    opacity: 0.7;
+    opacity: 0.8;
     border-radius: 20px;
     overflow: scroll;
 
@@ -163,7 +163,7 @@
     background-color: white;
     border-radius: 30px;
     height: 580px;
-    opacity: 0.7;
+    
 }
 .barChart{
     position: absolute;
@@ -190,4 +190,22 @@
     left: 70px;
     top: -6px;
     border-radius: 30px;
+}
+
+.pieChar{
+    position: absolute;
+    top: 620px;
+    font-weight: 500;
+    height: 500px;
+    width: 760px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 30px;
+    overflow: hidden;
+    
+}
+
+.pieChar span{
+    font-size: 50px;
+    font-weight: 900;
 }
