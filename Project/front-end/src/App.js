@@ -9,7 +9,8 @@ import Tempone from './views/blog_create/Tempone';
 import Template1 from './views/blog_create/template/Template1.js'
 import Template2 from './views/blog_create/template/Template2.js'
 import Template3 from './views/blog_create/template/Template3.js'
-
+import Publogs from './views/profile/publishblogs/Publogs';
+import Savblogs from './views/profile/savedblogs/Savblogs';
 function App() {
 
   return (
@@ -26,6 +27,8 @@ function App() {
           <Route exact path='/createblog/temp1' element={<Template1></Template1>}></Route>
           <Route exact path='/createblog/temp2' element={<Template2></Template2>}></Route>
           <Route exact path='/createblog/temp3' element={<Template3></Template3>}></Route>
+          <Route exact path='/profile/publishblog' element={<Publogs></Publogs>}></Route>
+          <Route exact path='/profile/"savedblog"' element={<Savblogs></Savblogs>}></Route>
 
         </Routes>
 

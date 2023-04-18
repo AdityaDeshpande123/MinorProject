@@ -6,13 +6,17 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } fro
 import { PieChart, Pie } from 'recharts';
 import Pichart from './pichart/Pichart.js'
 import dataany from '../../static/dataany.png'
+import { useNavigate } from "react-router-dom";
 function Profile() {
+
+    const navigate = useNavigate();
+
     document.body.style.backgroundImage = `url(${back})`;
     // document.body.style.backgroundColor = "rgba(101,99,99,255)"
     document.body.style.backgroundSize = "1600px 800px";
     document.body.style.backgroundRepeat = "no-repeat";
     const arr = {
-        username: "Austin kleon",
+        username: "Austin Kleon",
         about: "Austin Kleon is the New York Times bestselling author of a trilogy of illustrated books about creativity in the digital age: Steal Like An Artist, Show Your Work!, and Keep Going. He’s also the author of Newspaper Blackout, a collection of poems made by redacting the newspaper with a permanent marker. His books have been translated into dozens of languages and have sold over a million copies worldwide. He’s been featured on NPR’s Morning Edition, PBS Newshour",
         ppic: require('../../static/author.jpeg'),
         nblogs: "2",
@@ -242,6 +246,12 @@ function Profile() {
 
     }
 
+    function nav1(urli)
+    {
+        navigate(urli);
+
+    }
+
 
 
     return (
@@ -265,11 +275,11 @@ function Profile() {
 
             <div className={styles.usrblogs}>
 
-                <div className={styles.pblogs}>
+                <div className={styles.pblogs} onClick={()=>{nav1("publishblog")}}>
                     <h1>Published Blogs</h1>
                 </div>
 
-                <div className={styles.sblogs}>
+                <div className={styles.sblogs} onClick={()=>{nav1("savedblog")}}>
 
                     <h1>Saved Blogs</h1>
                 </div>
