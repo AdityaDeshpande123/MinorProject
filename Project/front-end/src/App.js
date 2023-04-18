@@ -13,7 +13,23 @@ function App() {
 
     <div>
 
-      <Template1></Template1>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage></Homepage>}></Route>
+          <Route path='signup' element={<Signpage></Signpage>}></Route>
+          <Route path='profile' element={<Profile></Profile>}></Route>
+          <Route path='createblog' element={<Tempone></Tempone>}></Route>
+        </Routes>
+        
+
+
+  </BrowserRouter>
+
+  {/* <Tempone></Tempone> */}
+  
+
+      
 
     </div>
 
