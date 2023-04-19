@@ -29,16 +29,16 @@ export default function (props) {
               <input
                 type="email"
                 className={style.form_control}
-                placeholder="Enter email"
-                size="32"
+                placeholder=" Enter email"
+                size="30"
               />
             </div>
             <div className={style.form_group}>
-              <label>Please Enter Password: </label><pre></pre>
+              <label>Enter Password: </label><pre></pre>
               <input
                 type="password"
                 className={style.form_control}
-                placeholder="Enter password"
+                placeholder=" Enter password"
                 size="30"
               />
             </div>
@@ -76,7 +76,7 @@ export default function (props) {
             <input
               type="name"
               className={style.form_control}
-              placeholder="e.g Jane Doe"
+              placeholder=" e.g Jane Doe"
               size="30"
             />
           </div>
@@ -85,7 +85,7 @@ export default function (props) {
             <input
               type="email"
               className={style.form_control}
-              placeholder="Email Address"
+              placeholder=" Email Address"
                size="30"
               />
           </div>
@@ -94,7 +94,7 @@ export default function (props) {
             <input
               type="password"
               className={style.form_control}
-              placeholder="Password"
+              placeholder=" Password"
               size="30"
               />
           </div>
