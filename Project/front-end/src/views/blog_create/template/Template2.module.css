@@ -1,7 +1,7 @@
 .main {
     width: 100%;
     height: 200vh;
-    background-color: rgb(26, 33, 101);
+    background-color: gold;
 }
 .base_h1 {
     background-color: black;
@@ -163,4 +163,18 @@
     bottom:3vh;
     width: 45vh;
     height: 50vh;
+}
+
+
+.file_ip{
+    /* display: none; */
+}
+
+.plusimg{
+    position: absolute;
+    top: 180px;
+    left: 500px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }

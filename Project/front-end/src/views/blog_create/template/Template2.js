@@ -3,8 +3,17 @@ import react,{usestate} from "react";
 import person from '../../../static/person.png';
 import signin from '../../../static/signin.jpg';
 import { useNavigate } from 'react-router-dom';
+import upload from '../../../static/upload.png';
+
 
 function Template() {
+
+
+    var imgBox= document.getElementById("imgBox");
+
+    var loadFile = function(Event){
+        imgBox.style.backgroundImage="url("+ URL.createObjectURL(Event.target.files[0]) +")";
+    }
     
     return (
           <div className={style.main}>
@@ -24,7 +33,10 @@ function Template() {
             <div className={style.title}>
             </div>
             <hr className={style.line}></hr>
-            <div className={style.blog}>
+            <div className={style.blog} id="imgBox">
+            <input type="file" accept="image/*" name="image" id="main_img" className={style.file_ip} onChange="loadFile(Event)" />
+            <label for="main_img"><img src={upload} className={style.plusimg}></img></label> 
+
             </div>
             <div className={style.im1}>
             </div>
