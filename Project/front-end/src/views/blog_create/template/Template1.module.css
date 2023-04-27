@@ -1,6 +1,6 @@
 .main {
     width: 100%;
-    height: 200vh;
+    height: 220vh;
     background-color: rgb(223, 220, 220);
 }
 .base_h1 {
@@ -41,7 +41,7 @@
 
 
 .About {
-    height: auto;
+    height: 20vh;
     width: 100%;
     text-align: center;
     background-color: black;
@@ -76,7 +76,9 @@
     border-radius: 20px;
     cursor: pointer;
 }
+.none {
 
+}
 .blog {
     background-color:rgb(253, 253, 253);
     left: 10px;
@@ -143,7 +145,7 @@
 }
 
 .text1{
-    position: absolute;
+    position: absolute; 
     left:10px;
     top:10px;
     width: 95vh;
@@ -164,10 +166,6 @@
     top:105vh;
     width:39vh;
     height:65vh;
-}
-
-.blog:hover {
-    cursor: pointer;
 }
 
 .b1{
@@ -200,7 +198,11 @@
   
   .dropdown a:active {background-color: #ddd;}
 
-  .add:hover .dropdown {display: block;}
+  .add:hover .dropdown {display: block; cursor: pointer; top: 28px}
+
+  .add1:hover .dropdown {display: block; cursor: pointer; top: 26px}
+
+  .add2:hover .dropdown {display: block; cursor: pointer; top: 26px}
 
   .add{
      position: absolute;
@@ -215,3 +217,23 @@
     height:25px;
     width:25px;
   }
+
+  .add1{
+    position: absolute;
+     align-items: center;
+     height: 10px;
+     width: 10px;
+     left:21vh;
+     top:15vh;
+  }
+
+  .add2{
+    position: absolute;
+    align-items: center;
+    height: 10px;
+    width: 10px;
+    left:18vh;
+    top:11vh;
+  }
+
+
