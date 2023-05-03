@@ -108,7 +108,7 @@ function Template() {
                  <h4 style={{padding:"0px",color:"rgb(161, 161, 161)"}}>Email : Blogosphere@gmail.com</h4>
                  </div>
                  <div className={style.copyright}>
-                 <h4 style={{padding:"8px"}}>BLOGOSPHERE Copyright © 2023 - All rights reserved  ||  Done by Batch A1</h4>
+                 <h4 style={{padding:"8px"}}>  BLOGOSPHERE Copyright © 2023 - All rights reserved  ||  Done by Batch A1</h4>
                  </div>
             </footer>
           </div>
