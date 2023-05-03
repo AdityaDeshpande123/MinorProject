@@ -35,7 +35,7 @@ function App() {
   </BrowserRouter>
 
   {/* <Tempone></Tempone> */}
- {/*<Template1></Template1>*/}
+{/*} <Template1></Template1> */}
     </div>
 
   );
