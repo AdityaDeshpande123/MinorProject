@@ -32,15 +32,10 @@ function App() {
 
         </Routes>
 
+  </BrowserRouter>
 
-
-      </BrowserRouter>
-
-      {/* <Tempone></Tempone> */}
-
-
-
-
+  {/* <Tempone></Tempone> */}
+{/*} <Template1></Template1> */}
     </div>
 
   );
