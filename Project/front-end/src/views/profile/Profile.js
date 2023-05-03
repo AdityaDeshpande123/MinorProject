@@ -262,14 +262,19 @@ function Profile() {
                 <div className={styles.profilepic}>
                     <img src={arr.ppic} className={styles.proimg}></img>
                     <h1 className={styles.prname}>{arr.username}</h1>
-                    <p className={styles.prabout}>{arr.about}</p>
-                </div>
-                <div className={styles.wrdetails}>
-                    <h3>Contact</h3>
+                    <div className={styles.wrdetails}>
                     <p>  927138122</p>
                     <p>  austin@austinkleon.com</p>
 
                 </div>
+                    <p className={styles.prabout}>{arr.about}</p>
+                </div>
+                {/* <div className={styles.wrdetails}>
+                    <h3>Contact</h3>
+                    <p>  927138122</p>
+                    <p>  austin@austinkleon.com</p>
+
+                </div> */}
 
             </div>
 

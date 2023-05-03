@@ -1,7 +1,7 @@
 .main {
     width: 100%;
     height: 200vh;
-    background-color: rgb(26, 33, 101);
+    background-color: gold;
 }
 .base_h1 {
     background-color: black;
@@ -80,7 +80,7 @@
 .temp2 {
     top: 10px;
     position: relative;
-    left: 37.5vh;
+    left: 25.5vh;
     border:solid black 1px;
     width: 150vh;
     height:185vh;
@@ -163,4 +163,20 @@
     bottom:3vh;
     width: 45vh;
     height: 50vh;
+}
+
+
+.file_ip{
+    position: absolute;
+    /* top: 0px;
+    left: 0px; */
+}
+
+.ipimg{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1044px;
+    height: 448px;
+    /* cursor: pointer; */
 }
