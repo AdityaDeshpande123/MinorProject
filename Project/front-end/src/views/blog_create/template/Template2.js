@@ -1,5 +1,5 @@
 import style from "./Template2.module.css"
-import react,{usestate} from "react";
+import React, { useState } from "react";
 import person from '../../../static/person.png';
 import signin from '../../../static/signin.jpg';
 import { useNavigate } from 'react-router-dom';
@@ -8,19 +8,19 @@ import upload from '../../../static/upload.png';
 
 function Template() {
 
-
-    var imgBox= document.getElementById("imgBox");
-
-    var loadFile = function(Event){
-        imgBox.style.backgroundImage="url("+ URL.createObjectURL(Event.target.files[0]) +")";
-    }
+                const [file, setFile] = useState();
+                function handleChange(e) 
+                {
+                    console.log(e.target.files);
+                     setFile(URL.createObjectURL(e.target.files[0]));
+                }
     
     return (
           <div className={style.main}>
           <div className={style.mainHeader}>
           <h1 className={style.base_h1}>BLOGOSPHERE</h1>
-      </div>
-      <div className={style.navBar}>
+            </div>
+            {/* <div className={style.navBar}> 
 
                 <ul className={style.base_ul}>
                    
@@ -28,14 +28,16 @@ function Template() {
                     <li  className={style.base_li}><img src={signin} height={"42px"} alt="image" style={{float:"left",paddingRight:"14px",paddingLeft:"10px"}}></img>Sign/SignUp</li>
                 </ul>
 
-            </div>
+            </div> */}
             <div className={style.temp2}>
             <div className={style.title}>
             </div>
             <hr className={style.line}></hr>
-            <div className={style.blog} id="imgBox">
-            <input type="file" accept="image/*" name="image" id="main_img" className={style.file_ip} onChange="loadFile(Event)" />
-            <label for="main_img"><img src={upload} className={style.plusimg}></img></label> 
+            <div className={style.blog} >
+            <input type="file" className={style.file_ip} onChange={handleChange} />
+            <img src={file} className={style.blog}  style={{left:"0px",top:"0px"}}></img>
+            {/* <img src={file} className={style.ipimg}></img> */}
+            {/* <label for="main_img"><img src={file} className={style.plusimg}></img></label>  */}
 
             </div>
             <div className={style.im1}>
@@ -58,7 +60,7 @@ function Template() {
                 <p>Contact information<a href="#">Gmail link</a></p>
             
             </footer>
-          </div>
+        </div>
     )
 }
 

@@ -80,7 +80,7 @@
 .temp2 {
     top: 10px;
     position: relative;
-    left: 37.5vh;
+    left: 25.5vh;
     border:solid black 1px;
     width: 150vh;
     height:185vh;
@@ -167,14 +167,16 @@
 
 
 .file_ip{
-    /* display: none; */
+    position: absolute;
+    /* top: 0px;
+    left: 0px; */
 }
 
-.plusimg{
+.ipimg{
     position: absolute;
-    top: 180px;
-    left: 500px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+    top: 0px;
+    left: 0px;
+    width: 1044px;
+    height: 448px;
+    /* cursor: pointer; */
 }
