@@ -1,169 +1,225 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from './Profile.module.css'
 import ppic from '../../static/author.jpeg'
 import back from '../../static/dashback2.jpg'
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { PieChart, Pie } from 'recharts';
 import Pichart from './pichart/Pichart.js'
-import dataany from '../../static/dataany.png'
 import { useNavigate } from "react-router-dom";
-function Profile() {
+import Bardata from './Bardata'
+import axios from 'axios';
+function getMon(num)
+{
+    switch(num)
+    {
+        case 0 : return "Jan";
+        case 1 : return "Feb";
+        case 2 : return "Mar";
+        case 3 : return "Apr";
+        case 4 : return "May";
+        case 5 : return "Jun";
+        case 6 : return "Jul";
+        case 7 : return "Aug";
+        case 8 : return "Sep";
+        case 9 : return "Oct";
+        case 10 : return "Nov";
+        case 11 : return "Dec";
+    }
 
-    const navigate = useNavigate();
 
-    document.body.style.backgroundImage = `url(${back})`;
-    // document.body.style.backgroundColor = "rgba(101,99,99,255)"
-    document.body.style.backgroundSize = "1600px 800px";
-    document.body.style.backgroundRepeat = "no-repeat";
+}
+function getfDay(num)
+{
+    switch(num)
+    {
+        case 0 : return "Mon";
+        case 1 : return "Tue";
+        case 2 : return "Wed";
+        case 3 : return "Thu";
+        case 4 : return "Fri";
+        case 5 : return "Sat";
+        case 6 : return "Sun";
+    }
+}
+function Profile(authorid) {
+
+
+
+    authorid = 1;
+
+    let ddata;
     const arr = {
         username: "Austin Kleon",
         about: "Austin Kleon is the New York Times bestselling author of a trilogy of illustrated books about creativity in the digital age: Steal Like An Artist, Show Your Work!, and Keep Going. He’s also the author of Newspaper Blackout, a collection of poems made by redacting the newspaper with a permanent marker. His books have been translated into dozens of languages and have sold over a million copies worldwide. He’s been featured on NPR’s Morning Edition, PBS Newshour",
         ppic: require('../../static/author.jpeg'),
-        nblogs: "2",
-        pviews: "2",
-        popularity: "30%",
-        likes: "100"
+        nblogs: 2,
+        pviews: 0,
+        likes: 100
     };
+    const [udata, setudata] = useState([]);
+    useEffect(() => {
+
+        axios.get(`http://localhost:8080/getBlog/${authorid}`).then(function (data) {
+            ddata = data.data;
+
+            console.log(ddata);
+            setudata(ddata);
+
+
+        }).catch(function (err) {
+            alert(err + "Didn't get error");
+        });
+
+    }, [])
+
+    const navigate = useNavigate();
+    console.log(udata);
+    arr.nblogs = udata.blogs;
+    arr.likes = udata.likes;
+    arr.pviews = udata.profile_views;
+    document.body.style.backgroundImage = `url(${back})`;
+    // document.body.style.backgroundColor = "rgba(101,99,99,255)"
+    document.body.style.backgroundSize = "1600px 800px";
+    document.body.style.backgroundRepeat = "no-repeat";
+
 
     let datayear = [
 
         {
             Para: '2021',
-            Views: 24,
-            Likes: 12
+            Views: 0,
+            Likes: 2
         },
         {
             Para: '2022',
-            Views: 26,
-            Likes: 13
+            Views: 0,
+            Likes: 0
         },
         {
             Para: '2023',
-            Views: 30,
-            Likes: 15
+            Views: 0,
+            Likes: 4
         },
         {
             Para: '2024',
-            Views: 18,
-            Likes: 6
+            Views: 0,
+            Likes: 0
         },
         {
             Para: '2025',
-            Views: 35,
-            Likes: 20
+            Views: 0,
+            Likes: 0
 
         },
         {
             Para: '2025',
-            Views: 31,
-            Likes: 23
+            Views: 0,
+            Likes: 0
 
         },
         {
             Para: '2025',
-            Views: 45,
-            Likes: 32
+            Views: 0,
+            Likes: 0
 
         },
         {
             Para: '2025',
-            Views: 50,
-            Likes: 35
+            Views: 0,
+            Likes: 0
 
         },
         {
             Para: '2025',
-            Views: 45,
-            Likes: 25
+            Views: 0,
+            Likes: 0
 
         },
         {
             Para: '2025',
-            Views: 60,
-            Likes: 50
+            Views: 0,
+            Likes: 0
 
         },
         {
             Para: '2025',
-            Views: 42,
-            Likes: 23
+            Views: 0,
+            Likes: 0
 
         },
         {
             Para: '2025',
-            Views: 90,
-            Likes: 80
+            Views: 0,
+            Likes: 0
 
         },
 
     ];
     let datamonth = [
-
         {
             Para: 'Jan',
-            Views: 14,
+            Views: 0,
             Likes: 6
         },
         {
             Para: 'Feb',
-            Views: 13,
+            Views: 0,
             Likes: 6
         },
         {
             Para: 'Mar',
-            Views: 15,
+            Views: 0,
             Likes: 3
         },
         {
             Para: 'Apr',
-            Views: 9,
+            Views: 0,
             Likes: 2
         },
         {
             Para: 'May',
-            Views: 6,
-            Likes: 2
+            Views: 0,
+            Likes: 2,
 
         },
         {
             Para: 'Jun',
-            Views: 21,
+            Views: 0,
             Likes: 10
 
         },
         {
             Para: 'Jul',
-            Views: 21,
+            Views: 0,
             Likes: 8
 
         },
         {
             Para: 'Aug',
-            Views: 50,
+            Views: 0,
             Likes: 35
 
         },
         {
             Para: 'Sep',
-            Views: 45,
+            Views: 0,
             Likes: 25
 
         },
         {
             Para: 'Oct',
-            Views: 60,
+            Views: 0,
             Likes: 50
 
         },
         {
             Para: 'Nov',
-            Views: 42,
+            Views: 0,
             Likes: 23
 
         },
         {
             Para: 'Dec',
-            Views: 90,
+            Views: 0,
             Likes: 80
 
         }
@@ -174,64 +230,93 @@ function Profile() {
     let dataDay = [
         {
             Para: "Mon",
-            Views: 3,
+            Views: 0,
             Likes: 1
 
         },
         {
             Para: "Tue",
-            Views: 4,
+            Views: 0,
             Likes: 2
 
         },
         {
             Para: "Wed",
-            Views: 5,
+            Views: 0,
             Likes: 3
 
         },
         {
             Para: "Thu",
-            Views: 2,
+            Views: 0,
             Likes: 1
 
         },
         {
             Para: "Fri",
-            Views: 8,
+            Views: 0,
             Likes: 3
 
         },
         {
             Para: "Sat",
-            Views: 12,
+            Views: 0,
             Likes: 8
 
         },
         {
             Para: "Sun",
-            Views: 20,
+            Views: 0,
             Likes: 10
 
         }
 
 
     ];
+    let viewdata = Bardata(authorid);
+    for (let i = 0; i < viewdata.length; i++) {
+        let dt = new Date(viewdata[i].bview);
+        let day = getfDay(dt.getDay());
+        let month = getMon(dt.getMonth());
+        let year = dt.getFullYear();
+        console.log(dt.getDay(), month, day);
+        for (let j = 0; j < datayear.length; j++) {
+            if (datayear[j].Para == year) {
+                datayear[j].Views++;
+            }
+        }
+        for (let j = 0; j < datamonth.length; j++) {
+            if (datamonth[j].Para == month) {
+                datamonth[j].Views++;
+            }
+        }
+        for (let j = 0; j < dataDay.length; j++) {
+            if (dataDay[j].Para == day) {
+                dataDay[j].Views++;
+            }
+        }
+
+    }
 
     let piedata = [
         {
-            type: "Travel",
-            bpub: 3
+            name: "Travel",
+            value: 0
         },
         {
-            type: "Food",
-            bpub: 2
+            name: "Food",
+            value: 0
         },
         {
-            type: "Automobile",
-            bpub: 4
+            name: "Automobile",
+            value: 0
         }
     ];
+
+    piedata[0].value = udata.travel;
+    piedata[1].value = udata.food;
+    piedata[2].value = udata.auto;
+
 
     const [datas, setDatas] = useState(datayear);
 
@@ -246,8 +331,7 @@ function Profile() {
 
     }
 
-    function nav1(urli)
-    {
+    function nav1(urli) {
         navigate(urli);
 
     }
@@ -275,11 +359,11 @@ function Profile() {
 
             <div className={styles.usrblogs}>
 
-                <div className={styles.pblogs} onClick={()=>{nav1("publishblog")}}>
+                <div className={styles.pblogs} onClick={() => { nav1("publishblog") }}>
                     <h1>Published Blogs</h1>
                 </div>
 
-                <div className={styles.sblogs} onClick={()=>{nav1("savedblog")}}>
+                <div className={styles.sblogs} onClick={() => { nav1("savedblog") }}>
 
                     <h1>Saved Blogs</h1>
                 </div>
@@ -303,7 +387,7 @@ function Profile() {
 
                 <div className={styles.analytics1}>
                     <p className={styles.barheader}>
-                        Total Views :<strong>100 </strong>
+                        Total Views :<strong>{udata.blog_views} </strong>
                     </p>
 
                     <div className={styles.seanalytics}>
@@ -344,11 +428,11 @@ function Profile() {
 
                     <div className={styles.pieChar}>
                         <p>Total Blogs Published<br></br><span>{arr.nblogs}</span></p>
-                       
+
                     </div>
                     <br></br><br></br><br></br>
-                    <Pichart></Pichart>
-                   
+                    <Pichart data={piedata}></Pichart>
+
 
 
 

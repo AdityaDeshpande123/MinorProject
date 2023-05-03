@@ -28,7 +28,7 @@ function App() {
           <Route exact path='/createblog/temp2' element={<Template2></Template2>}></Route>
           <Route exact path='/createblog/temp3' element={<Template3></Template3>}></Route>
           <Route exact path='/profile/publishblog' element={<Publogs></Publogs>}></Route>
-          <Route exact path='/profile/"savedblog"' element={<Savblogs></Savblogs>}></Route>
+          <Route exact path='/profile/savedblog' element={<Savblogs></Savblogs>}></Route>
 
         </Routes>
 

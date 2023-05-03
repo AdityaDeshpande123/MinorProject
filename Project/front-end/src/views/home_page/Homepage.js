@@ -5,10 +5,11 @@ import React, { useState } from "react";
 import bg1 from '../../static/bg1.jpeg'
 import bg2 from '../../static/bg1.jpg'
 import search from '../../static/search-512.png'
-import { useNavigate } from 'react-router-dom';
-function Homepage() {
-    let counter = 0;
-   
+import { useLocation, useNavigate } from 'react-router-dom';
+
+function Homepage(props) {
+    const location = useLocation();
+    const [islogin,setLogin] = useState(location.state ? location.state : false);
     const [publishblogs] = useState([
         {
 
@@ -115,7 +116,7 @@ function Homepage() {
 
         <div>
 
-            <WebBase></WebBase>
+            <WebBase data={islogin} ></WebBase>
             
             <div className={styles.searchBar}>
 
