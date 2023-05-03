@@ -6,11 +6,12 @@ import Card from './views/card-view/Card';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from './views/profile/Profile';
 import Tempone from './views/blog_create/Tempone';
-import Template1 from './views/blog_create/template/Template1.js'
-import Template2 from './views/blog_create/template/Template2.js'
-import Template3 from './views/blog_create/template/Template3.js'
+import Template1 from './views/blog_create/template/Template1.js';
+import Template2 from './views/blog_create/template/Template2.js';
+import Template3 from './views/blog_create/template/Template3.js';
 import Publogs from './views/profile/publishblogs/Publogs';
 import Savblogs from './views/profile/savedblogs/Savblogs';
+
 function App() {
 
   return (
@@ -32,15 +33,10 @@ function App() {
 
         </Routes>
 
+  </BrowserRouter>
 
-
-      </BrowserRouter>
-
-      {/* <Tempone></Tempone> */}
-
-
-
-
+  {/* <Tempone></Tempone> */}
+{/*} <Template1></Template1> */}
     </div>
 
   );

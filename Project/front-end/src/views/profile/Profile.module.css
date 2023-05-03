@@ -23,7 +23,7 @@
     left : 200px;
     top : 50px;
     font-size: 35px;
-    width: 100px;
+    width: 300px;
 
 }
 .prabout{
@@ -34,11 +34,15 @@
 }
 
 .wrdetails{
+    position: absolute;
     padding: 20px;
     width: auto;
-    font-size: 20px;
+    font-size: 15px;
+    top: 80px;
+    left: 180px;
+    color: dodgerblue ;
 
-    
+
 }
 
 .pblogs{
