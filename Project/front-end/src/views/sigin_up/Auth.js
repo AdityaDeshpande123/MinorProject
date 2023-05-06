@@ -91,7 +91,7 @@ export default function (props) {
             />
           </div>
           <div className={style.form_group}>
-          <label>Phone Numbers</label><pre></pre>
+          <label>Phone Number</label><pre></pre>
           <input
             type="tel"
             className={style.form_control}
