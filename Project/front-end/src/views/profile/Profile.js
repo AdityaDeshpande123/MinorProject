@@ -7,37 +7,33 @@ import Pichart from './pichart/Pichart.js'
 import { useNavigate } from "react-router-dom";
 import Bardata from './Bardata'
 import axios from 'axios';
-function getMon(num)
-{
-    switch(num)
-    {
-        case 0 : return "Jan";
-        case 1 : return "Feb";
-        case 2 : return "Mar";
-        case 3 : return "Apr";
-        case 4 : return "May";
-        case 5 : return "Jun";
-        case 6 : return "Jul";
-        case 7 : return "Aug";
-        case 8 : return "Sep";
-        case 9 : return "Oct";
-        case 10 : return "Nov";
-        case 11 : return "Dec";
+function getMon(num) {
+    switch (num) {
+        case 0: return "Jan";
+        case 1: return "Feb";
+        case 2: return "Mar";
+        case 3: return "Apr";
+        case 4: return "May";
+        case 5: return "Jun";
+        case 6: return "Jul";
+        case 7: return "Aug";
+        case 8: return "Sep";
+        case 9: return "Oct";
+        case 10: return "Nov";
+        case 11: return "Dec";
     }
 
 
 }
-function getfDay(num)
-{
-    switch(num)
-    {
-        case 0 : return "Mon";
-        case 1 : return "Tue";
-        case 2 : return "Wed";
-        case 3 : return "Thu";
-        case 4 : return "Fri";
-        case 5 : return "Sat";
-        case 6 : return "Sun";
+function getfDay(num) {
+    switch (num) {
+        case 0: return "Mon";
+        case 1: return "Tue";
+        case 2: return "Wed";
+        case 3: return "Thu";
+        case 4: return "Fri";
+        case 5: return "Sat";
+        case 6: return "Sun";
     }
 }
 function Profile(authorid) {
@@ -87,7 +83,7 @@ function Profile(authorid) {
         {
             Para: '2021',
             Views: 0,
-            Likes: 2
+            Likes: 0
         },
         {
             Para: '2022',
@@ -97,7 +93,7 @@ function Profile(authorid) {
         {
             Para: '2023',
             Views: 0,
-            Likes: 4
+            Likes: 0
         },
         {
             Para: '2024',
@@ -158,69 +154,68 @@ function Profile(authorid) {
         {
             Para: 'Jan',
             Views: 0,
-            Likes: 6
+            Likes: 0
         },
         {
             Para: 'Feb',
             Views: 0,
-            Likes: 6
+            Likes: 0
         },
         {
             Para: 'Mar',
             Views: 0,
-            Likes: 3
+            Likes: 0
         },
         {
             Para: 'Apr',
             Views: 0,
-            Likes: 2
+            Likes: 0
         },
         {
             Para: 'May',
             Views: 0,
-            Likes: 2,
+            Likes: 0
 
         },
         {
             Para: 'Jun',
             Views: 0,
-            Likes: 10
+            Likes: 0
 
         },
         {
             Para: 'Jul',
             Views: 0,
-            Likes: 8
-
+            Likes: 0
         },
         {
             Para: 'Aug',
             Views: 0,
-            Likes: 35
+            Likes: 0
 
         },
         {
             Para: 'Sep',
             Views: 0,
-            Likes: 25
+            Likes: 0
 
         },
         {
             Para: 'Oct',
             Views: 0,
-            Likes: 50
+            Likes: 0
 
         },
         {
             Para: 'Nov',
             Views: 0,
-            Likes: 23
+            Likes: 0
 
         },
         {
             Para: 'Dec',
             Views: 0,
-            Likes: 80
+            Likes: 0
 
         }
 
@@ -231,55 +226,50 @@ function Profile(authorid) {
         {
             Para: "Mon",
             Views: 0,
-            Likes: 1
-
+            Likes: 0
         },
         {
             Para: "Tue",
             Views: 0,
-            Likes: 2
-
+            Likes: 0
         },
         {
             Para: "Wed",
             Views: 0,
-            Likes: 3
-
+            Likes: 0
         },
         {
             Para: "Thu",
             Views: 0,
-            Likes: 1
-
+            Likes: 0
         },
         {
             Para: "Fri",
             Views: 0,
-            Likes: 3
-
+            Likes: 0
         },
         {
             Para: "Sat",
             Views: 0,
-            Likes: 8
-
+            Likes: 0
         },
         {
             Para: "Sun",
             Views: 0,
-            Likes: 10
+            Likes: 0
 
         }
 
 
     ];
-    let viewdata = Bardata(authorid);
+    let viewdatafull = Bardata(authorid);
+    let viewdata = viewdatafull[0];
     for (let i = 0; i < viewdata.length; i++) {
         let dt = new Date(viewdata[i].bview);
         let day = getfDay(dt.getDay());
         let month = getMon(dt.getMonth());
         let year = dt.getFullYear();
-        console.log(dt.getDay(), month, day);
+        //console.log(dt.getDay(), month, day);
         for (let j = 0; j < datayear.length; j++) {
             if (datayear[j].Para == year) {
                 datayear[j].Views++;
@@ -293,6 +283,30 @@ function Profile(authorid) {
         for (let j = 0; j < dataDay.length; j++) {
             if (dataDay[j].Para == day) {
                 dataDay[j].Views++;
+            }
+        }
+
+    }
+    viewdata = viewdatafull[1];
+    for (let i = 0; i < viewdata.length; i++) {
+        let dt = new Date(viewdata[i].bview);
+        let day = getfDay(dt.getDay());
+        let month = getMon(dt.getMonth());
+        let year = dt.getFullYear();
+        console.log(dt.getDay(), month, day);
+        for (let j = 0; j < datayear.length; j++) {
+            if (datayear[j].Para == year) {
+                datayear[j].Likes++;
+            }
+        }
+        for (let j = 0; j < datamonth.length; j++) {
+            if (datamonth[j].Para == month) {
+                datamonth[j].Likes++;
+            }
+        }
+        for (let j = 0; j < dataDay.length; j++) {
+            if (dataDay[j].Para == day) {
+                dataDay[j].Likes++;
             }
         }
 
@@ -347,10 +361,10 @@ function Profile(authorid) {
                     <img src={arr.ppic} className={styles.proimg}></img>
                     <h1 className={styles.prname}>{arr.username}</h1>
                     <div className={styles.wrdetails}>
-                    <p>  927138122</p>
-                    <p>  austin@austinkleon.com</p>
+                        <p>  927138122</p>
+                        <p>  austin@austinkleon.com</p>
 
-                </div>
+                    </div>
                     <p className={styles.prabout}>{arr.about}</p>
                 </div>
                 {/* <div className={styles.wrdetails}>

@@ -39,8 +39,6 @@ export default function (props) {
             let data = res.data;
             if (data != null) {
               if (data.pass === pass) {
-                alert("Hello");
-                
                 navigate('/',{state: true});
 
               }
