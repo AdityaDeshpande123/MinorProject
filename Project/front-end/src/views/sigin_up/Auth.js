@@ -104,7 +104,7 @@ export default function (props) {
 
   return (
     <div className={style.Auth_form_container}>
-      <form className={style.Auth_form}>
+      <form className={style.Auth_form} style={{height:"540px"}}>
         <div className={style.Auth_form_content}>
           <h3 className={style.tname}> Welcome to Blogosphere!</h3>
           <h3 className={style.Auth_form_title}>Sign Up</h3>
@@ -124,6 +124,25 @@ export default function (props) {
             />
           </div>
           <div className={style.form_group}>
+            <label>Bio</label><pre></pre>
+            <textarea
+              type="text"
+              className={style.form_control}
+              placeholder="Enter your Bio"
+              size="30"
+              style={{width:"41.7vh"}}
+            />
+          </div>
+          <div className={style.form_group}>
+          <label>Phone Number</label><pre></pre>
+          <input
+            type="tel"
+            className={style.form_control}
+            placeholder="Phone Number"
+             size="30"
+            />
+            </div>
+          <div className={style.form_group}>
             <label>Email address</label><pre></pre>
             <input
               type="email"
@@ -141,6 +160,7 @@ export default function (props) {
               size="30"
             />
           </div>
+          
           <div className={style.d_grid}>
             <button className={style.btn}>
               Sign Up
