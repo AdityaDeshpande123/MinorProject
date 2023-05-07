@@ -14,6 +14,43 @@ function Tempone() {
         navigate(urli);
     }
 
+    let index = 0;
+    let bindex = 0;
+
+    function bldclicked(){
+        const btn = document.getElementById('bldbtn');
+
+       
+
+        const colors = ['aqua', 'azure'];
+
+        btn.addEventListener('click', function onClick() {
+        btn.style.backgroundColor = colors[bindex];
+        btn.style.color = 'black';
+
+        bindex = bindex >= colors.length -1 ? 0 : bindex + 1;
+        });
+
+    }
+
+    function itclicked(){
+        const btn = document.getElementById('itbtn');
+
+       
+
+        const colors = ['aqua', 'azure'];
+
+        btn.addEventListener('click', function onClick() {
+        btn.style.backgroundColor = colors[index];
+        btn.style.color = 'black';
+
+        index = index >= colors.length -1 ? 0 : index + 1;
+        });
+
+    }
+
+    
+
     return (
         <>
             <div className={styles.headdiv}>
@@ -28,8 +65,8 @@ function Tempone() {
                     <option value="temp3">Template 3</option>
                 </select>
 
-                <button className={styles.bold}>Bold</button>
-                <button className={styles.italic}>Italic</button>
+                <button className={styles.bold} id="bldbtn" onClick={bldclicked}>Bold</button>
+                <button className={styles.italic} id="itbtn" onClick={itclicked}>Italic</button>
 
 
             </div>
