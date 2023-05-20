@@ -12,6 +12,8 @@ import Template3 from './views/blog_create/template/Template3.js';
 import Publogs from './views/profile/publishblogs/Publogs';
 import Savblogs from './views/profile/savedblogs/Savblogs';
 import Template11 from './views/blog_view/Template11';
+import Template22 from './views/blog_view/Template22';
+import Template33 from './views/blog_view/Template33'
 
 function App() {
 
@@ -20,7 +22,7 @@ function App() {
     <div>
 
   
-   {/*   <BrowserRouter>
+   <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage></Homepage>}></Route>
           <Route path='/signup' element={<Signpage></Signpage>}></Route>
@@ -34,10 +36,10 @@ function App() {
 
         </Routes>
 
-  </BrowserRouter> */}
+  </BrowserRouter> 
 
    {/*<Tempone></Tempone> */}
- <Template11></Template11> 
+{/*<Template3></Template3>  */}
     </div>
 
   );

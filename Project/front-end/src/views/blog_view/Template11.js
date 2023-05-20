@@ -1,6 +1,5 @@
 import style from "./Template11.module.css"
 function Template() {
-    
     return (
         <div className={style.main}>
         <div className={style.mainHeader}>

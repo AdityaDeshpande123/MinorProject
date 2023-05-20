@@ -25,18 +25,14 @@
     color: aqua
 }
 .navBar {
-
     height: 575px;
     width: 220px;
     background-color: white;
     box-shadow: 10px;
     border-radius: 20px;
-
-    /* position: absolute; */
     position: fixed;
     opacity: 0.5;
     top: 80px;
-
 }
 
 
