@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react';
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer,Legend } from 'recharts';
 
-const data = [
+let data = [
   { name: 'Travel', value: 4 },
   { name: 'Food', value: 3 },
   { name: 'Automobile', value: 2 },
 ];
+
+
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -23,8 +25,11 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 };
 
 export default class Example extends PureComponent {
-
+  
+  
   render() {
+    data = this.props.data;
+    
     return (
       <ResponsiveContainer width="100%" height="100%">
         <PieChart width={60} height={60}>
@@ -37,7 +42,9 @@ export default class Example extends PureComponent {
             outerRadius={170}
         
             fill="#8884d8"
+           
             dataKey="value"
+
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

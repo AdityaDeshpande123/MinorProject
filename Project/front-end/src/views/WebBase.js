@@ -8,9 +8,14 @@ import signin from '../static/signin.jpg'
 import automob from '../static/automobile.webp' 
 import back from '../static/bg1.jpg'
 import { useNavigate } from 'react-router-dom';
-function WebBase() {
+import img from '../static/bg1.jpeg'
+function WebBase(props) {
+    let loginstat = props.data;
+   
+    
+    const navigate = useNavigate();
 
-    const navigate = useNavigate()
+    
     
     document.body.style.backgroundImage = `url(${back})`;
     document.body.style.backgroundSize = "1600px 900px";
@@ -33,11 +38,41 @@ function WebBase() {
 
                 <ul className={styles.base_ul}>
                    
-                    <li onClick={()=> navigate('profile')} className={styles.base_li}> <img src={person} height={"35px"} alt="image" style={{float:"left",paddingRight:"22px",paddingLeft:"10px"}}></img>Profile</li>
-                    <li className={styles.base_li}><img src={travel} height={"40px"} alt="image" style={{float:"left",paddingRight:"20px",paddingLeft:"10px"}}></img>Travel</li>
-                    <li className={styles.base_li}><img src={food} height={"40px"} alt="image" style={{float:"left",paddingRight:"10px",paddingLeft:"10px"}}></img>Food</li>
-                    <li className={styles.base_li}><img src={automob} height={"40px"} alt="image" style={{float:"left",paddingRight:"22px",paddingLeft:"10px"}}></img>Automobile</li>
-                    <li onClick={()=> navigate('signup')} className={styles.base_li}><img src={signin} height={"42px"} alt="image" style={{float:"left",paddingRight:"14px",paddingLeft:"10px"}}></img>Sign/SignUp</li>
+                    <li onClick={()=> {
+                        if(loginstat===true)
+                        navigate('profile');
+                        else
+                        {
+                            alert("Please login/signup to continue");
+                            navigate('signup',{state : loginstat});
+                        }
+                    }} className={styles.base_li}> <img src={person} height={"35px"} alt="image" style={{float:"left",paddingRight:"22px",paddingLeft:"10px"}}></img>Profile</li>
+                    <li 
+                    onClick={()=>{
+                        //alert("image button was clicked");
+                        props.changeBlogs(props.splitArray(props.travelBlogs))
+                    }}
+                    className={styles.base_li}><img src={travel} height={"40px"} alt="image" style={{float:"left",paddingRight:"20px",paddingLeft:"10px"}}></img>Travel</li>
+                    <li 
+                    onClick={()=>{
+                        //alert("image button was clicked");
+                        props.changeBlogs(props.splitArray(props.foodBlogs))
+                    }}
+                    className={styles.base_li}><img src={food} height={"40px"} alt="image" style={{float:"left",paddingRight:"10px",paddingLeft:"10px"}}></img>Food</li>
+                    <li 
+                    onClick={()=>{
+                        //alert("image button was clicked");
+                        props.changeBlogs(props.splitArray(props.automobilelBlogs))
+                    }}
+                    className={styles.base_li}><img src={automob} height={"40px"} alt="image" style={{float:"left",paddingRight:"22px",paddingLeft:"10px"}}></img>Automobile</li>
+                    <li onClick={()=> {
+
+                        if(loginstat===true)
+                        alert("You have already logged in");
+                        else
+                        navigate('signup')
+
+                    }} className={styles.base_li}><img src={signin} height={"42px"} alt="image" style={{float:"left",paddingRight:"14px",paddingLeft:"10px"}}></img>Sign/SignUp</li>
                 </ul>
 
             </div>

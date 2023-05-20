@@ -1,8 +1,16 @@
 import style from "./Signpage.module.css"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import signinner from '../../static/signinner.jpg'
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
+
+
 
 export default function (props) {
+
+  const navigate = useNavigate();
+ 
   let [authMode, setAuthMode] = useState("signin")
 
   const changeAuthMode = () => {
@@ -11,19 +19,56 @@ export default function (props) {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
 
   }
-  document.body.style.backgroundImage=`url(${signinner})`;
+  
+
+
+  document.body.style.backgroundImage = `url(${signinner})`;
   document.body.style.backgroundSize = "1600px 900px";
   if (authMode === "signin") {
     return (
       <div className={style.Auth_form_container}>
-        <form className={style.Auth_form}>
+        <form className={style.Auth_form} onSubmit={(e) => {
+
+          e.preventDefault();
+
+          let email = document.getElementById('email').value;
+          let pass = document.getElementById('password').value;
+
+
+          //alert(gemail + typeof(gemail));
+          axios.get(`http://localhost:8080/getauthor/${email}`).then((res) => {
+
+            let data = res.data;
+            if (data != null) {
+              if (data.pass === pass) {
+                navigate('/',{state: true});
+
+              }
+              else {
+                alert("Incorrect password");
+              }
+            }
+            else {
+              alert("No such user exist");
+            }
+
+
+          }).catch((err) => {
+            alert(err);
+          });
+
+        }}>
           <div className={style.Auth_form_content}>
-          <h3 className={style.tname}> Welcome to Blogosphere!</h3>
+            <h3 className={style.tname}> Welcome to Blogosphere!</h3>
             <h3 className={style.Auth_form_title}>Sign In</h3>
             <div className={style.text_center}>
               Not registered yet?{" "}
+              <span className={style.link_primary} onClick={changeAuthMode}>
+                Sign Up
+
               <span className={style.link_primary} onClick={changeAuthMode} >
                Sign Up
+
               </span><br></br><br></br>
             </div>
             <div className={style.form_group}>
@@ -33,6 +78,7 @@ export default function (props) {
                 className={style.form_control}
                 id="ref1"
                 placeholder=" Enter email"
+                id='email'
                 size="30"
               />
             </div>
@@ -43,16 +89,17 @@ export default function (props) {
                 className={style.form_control}
                 id="ref2"
                 placeholder=" Enter password"
+                id='password'
                 size="30"
               />
             </div>
             <div className={style.d_grid}>
-              <button type="submit" className={style.btn}>
+              <button className={style.btn}>
                 Sign In
               </button>
-            <button type="reset" className={style.btn_reset}>
-              Reset
-            </button>
+              <button className={style.btn_reset}>
+                Reset
+              </button>
             </div>
             <p className={style.text_center}>
               Forgot <a href="#">password?</a>
@@ -67,9 +114,15 @@ export default function (props) {
     <div className={style.Auth_form_container}>
       <form className={style.Auth_form} style={{height:"540px"}}>
         <div className={style.Auth_form_content}>
+
+          <h3 className={style.tname}> Welcome to Blogosphere!</h3>
+          <h3 className={style.Auth_form_title}>Sign Up</h3>
+          <div className={style.text_center}>
+
          <h3 className={style.tname} style={{top:"8vh",position:"absolute"}}> Welcome to Blogosphere!</h3>
           <h3 className={style.Auth_form_title} style={{top:"-20px",position:"relative"}}>Sign Up</h3>
           <div className={style.text_center} style={{top:"-20px",position:"relative"}} >
+
             Already registered?{" "}
             <span className={style.link_primary} onClick={changeAuthMode}>
               Sign In
@@ -126,12 +179,32 @@ export default function (props) {
              size="30"
             />
             </div>
+
+          <div className={style.form_group}>
+            <label>Email address</label><pre></pre>
+            <input
+              type="email"
+              className={style.form_control}
+              placeholder=" Email Address"
+              size="30"
+            />
+          </div>
+          <div className={style.form_group}>
+            <label>Password</label><pre></pre>
+            <input
+              type="password"
+              className={style.form_control}
+              placeholder=" Password"
+              size="30"
+            />
+          </div>
+
           
           <div className={style.d_grid}>
-            <button type="submit" className={style.btn}>
+            <button className={style.btn}>
               Sign Up
             </button>
-            <button type="reset" className={style.btn_reset}>
+            <button className={style.btn_reset}>
               Reset
             </button>
           </div>

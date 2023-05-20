@@ -85,7 +85,7 @@ function Tempone() {
                     </div>
 
                     <div className={styles.createformdiv}>
-                        <textarea placeholder='Write a blog' type="text" className={styles.textinput}></textarea>
+                        <input placeholder='Write a blog' type="text" className={styles.textinput}></input>
                     </div>
                     <button className={styles.blogsubmit}>PUBLISH</button>
                     <button className={styles.blogsave}>SAVE DRAFT</button>
