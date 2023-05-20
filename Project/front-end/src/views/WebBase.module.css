@@ -36,9 +36,11 @@
     border-radius: 20px;
 
     /* position: absolute; */
-    position: fixed;
+    position: absolute;
     opacity: 0.5;
-    top: 80px;
+    top: 160px;
+    
+    margin-bottom: 1200px;
 
 }
 
@@ -50,7 +52,7 @@
     background-color: rgb(58, 58, 58);
     color: white;
     position: absolute;
-    top:150vh;
+    top:110vh;
 }
 
 .copyright {
