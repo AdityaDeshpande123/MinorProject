@@ -7,7 +7,9 @@ import Pichart from './pichart/Pichart.js'
 import { useNavigate } from "react-router-dom";
 import Bardata from './Bardata'
 import axios from 'axios';
+import { type } from "@testing-library/user-event/dist/type";
 function getMon(num) {
+    
     switch (num) {
         case 0: return "Jan";
         case 1: return "Feb";
@@ -37,6 +39,21 @@ function getfDay(num) {
     }
 }
 function Profile(authorid) {
+    const convertDataUrlToImage = (imgUrl) => {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+
+            img.onload = () => {
+                resolve(img);
+            };
+
+            img.onerror = (error) => {
+                reject(error);
+            };
+
+            img.src = imgUrl;
+        });
+    };
 
 
 
@@ -52,18 +69,51 @@ function Profile(authorid) {
         likes: 100
     };
     const [udata, setudata] = useState([]);
+    const [authData, setAuthData] = useState([])
+    const [authPic, setAuthPic] = useState()
+
     useEffect(() => {
 
         axios.get(`http://localhost:8080/getBlog/${authorid}`).then(function (data) {
             ddata = data.data;
 
-            console.log(ddata);
+
             setudata(ddata);
 
 
         }).catch(function (err) {
             alert(err + "Didn't get error");
         });
+
+
+        axios.get(`http://localhost:8080/getAuthDetails/1`).then((res) => {
+
+            setAuthData(res.data)
+            //alert(authData)
+
+        }).catch((err) => {
+            alert(err)
+        })
+
+        axios.get(`http://localhost:8080/getAuthPic/106`).then((res) => {
+
+            console.log(res.data)
+            const imgUrl = res.data.path
+            //console.log(imgUrl)
+            setAuthPic(imgUrl)
+            convertDataUrlToImage(imgUrl)
+                .then((img) => {
+                    //setAuthPic(img)
+                    console.log(img)
+                })
+                .catch((error) => {
+                    // Error occurred while loading the image
+                    console.error(error);
+                });
+
+        }).catch((err) => {
+            alert(err)
+        })
 
     }, [])
 
@@ -72,7 +122,12 @@ function Profile(authorid) {
     arr.nblogs = udata.blogs;
     arr.likes = udata.likes;
     arr.pviews = udata.profile_views;
+    arr.username = authData.name
+    arr.about = authData.bio
+    arr.ppic = authPic
+
     document.body.style.backgroundImage = `url(${back})`;
+
     // document.body.style.backgroundColor = "rgba(101,99,99,255)"
     document.body.style.backgroundSize = "1600px 800px";
     document.body.style.backgroundRepeat = "no-repeat";
@@ -358,11 +413,11 @@ function Profile(authorid) {
             <div className={styles.profileview}>
 
                 <div className={styles.profilepic}>
-                    <img src={arr.ppic} className={styles.proimg}></img>
+                    <img src={authPic} className={styles.proimg}></img>
                     <h1 className={styles.prname}>{arr.username}</h1>
                     <div className={styles.wrdetails}>
-                        <p>  927138122</p>
-                        <p>  austin@austinkleon.com</p>
+                        <p>  {authData.phno}</p>
+                        <p>  {authData.email}</p>
 
                     </div>
                     <p className={styles.prabout}>{arr.about}</p>
