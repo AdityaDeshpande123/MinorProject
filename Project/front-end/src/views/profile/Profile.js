@@ -95,7 +95,7 @@ function Profile(authorid) {
             alert(err)
         })
 
-        axios.get(`http://localhost:8080/getAuthPic/106`).then((res) => {
+        axios.get(`http://localhost:8080/getAuthPic/55`).then((res) => {
 
             console.log(res.data)
             const imgUrl = res.data.path
