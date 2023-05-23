@@ -90,7 +90,7 @@ function WebBase(props) {
             </div>
             <div className={styles.contact}>
               <h2 style={{color:"white",fontSize:"30px"}}>Contact Us</h2>
-              <h4 style={{paddingTop:"18px",color:"rgb(161, 161, 161)"}}>NIE Boys Hostel, Mysore - 560097</h4>
+              <h4 style={{paddingTop:"18px",color:"rgb(161, 161, 161)"}}>NIE Boys Hostel, Mysore - 570008</h4>
               <h4 style={{padding:"6px",color:"rgb(161, 161, 161)"}}>Phone No : +91 1234-234-234</h4>
               <h4 style={{padding:"0px",color:"rgb(161, 161, 161)"}}>Email : Blogosphere@gmail.com</h4>
               </div>
