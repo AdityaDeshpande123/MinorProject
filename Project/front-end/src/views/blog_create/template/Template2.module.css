@@ -221,15 +221,16 @@
 
 .b1{
     position: absolute;
-    left:137vh;
-    top:180vh;
+    left:157vh;
+    top:200vh;
 }
 
 .b2{
   position: absolute;
-  left:120vh;
-  top:180vh;
+  left:140vh;
+  top:200vh;
 }
+
 
 .dropdown {
     display: none;
