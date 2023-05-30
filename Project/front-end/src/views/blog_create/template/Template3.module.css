@@ -59,7 +59,7 @@
 .fimg {
     position: absolute;
     left:25vh;
-    top:7vh;
+    top:3vh;
 }
 
 .info {
@@ -219,13 +219,16 @@
 .b3{
     position: absolute;
     left:157vh;
-    top:200vh;
+
+    top:190vh;
+
 }
 
 .b4{
   position: absolute;
-  left:140vh;
-  top:200vh;
+  left:142vh;
+  top:190vh;
+
 }
 
 .dropdown {

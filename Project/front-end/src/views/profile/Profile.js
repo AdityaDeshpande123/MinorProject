@@ -86,7 +86,7 @@ function Profile(authorid) {
         });
 
 
-        axios.get(`http://localhost:8080/getAuthDetails/1`).then((res) => {
+        axios.get(`http://localhost:8080/getAuthDetails/3`).then((res) => {
 
             setAuthData(res.data)
             //alert(authData)
@@ -94,6 +94,7 @@ function Profile(authorid) {
         }).catch((err) => {
             alert(err)
         })
+
 
         axios.get(`http://localhost:8080/getAuthPic/55`).then((res) => {
 
@@ -135,6 +136,18 @@ function Profile(authorid) {
 
     let datayear = [
 
+
+        {
+            Para: '2019',
+            Views: 0,
+            Likes: 0
+        },
+        {
+            Para: '2020',
+            Views: 0,
+            Likes: 0
+        },
+
         {
             Para: '2021',
             Views: 0,
@@ -150,59 +163,59 @@ function Profile(authorid) {
             Views: 0,
             Likes: 0
         },
-        {
-            Para: '2024',
-            Views: 0,
-            Likes: 0
-        },
-        {
-            Para: '2025',
-            Views: 0,
-            Likes: 0
+        // {
+        //     Para: '2024',
+        //     Views: 0,
+        //     Likes: 0
+        // },
+        // {
+        //     Para: '2025',
+        //     Views: 0,
+        //     Likes: 0
 
-        },
-        {
-            Para: '2025',
-            Views: 0,
-            Likes: 0
+        // },
+        // {
+        //     Para: '2025',
+        //     Views: 0,
+        //     Likes: 0
 
-        },
-        {
-            Para: '2025',
-            Views: 0,
-            Likes: 0
+        // },
+        // {
+        //     Para: '2025',
+        //     Views: 0,
+        //     Likes: 0
 
-        },
-        {
-            Para: '2025',
-            Views: 0,
-            Likes: 0
+        // },
+        // {
+        //     Para: '2025',
+        //     Views: 0,
+        //     Likes: 0
 
-        },
-        {
-            Para: '2025',
-            Views: 0,
-            Likes: 0
+        // },
+        // {
+        //     Para: '2025',
+        //     Views: 0,
+        //     Likes: 0
 
-        },
-        {
-            Para: '2025',
-            Views: 0,
-            Likes: 0
+        // },
+        // {
+        //     Para: '2025',
+        //     Views: 0,
+        //     Likes: 0
 
-        },
-        {
-            Para: '2025',
-            Views: 0,
-            Likes: 0
+        // },
+        // {
+        //     Para: '2025',
+        //     Views: 0,
+        //     Likes: 0
 
-        },
-        {
-            Para: '2025',
-            Views: 0,
-            Likes: 0
+        // },
+        // {
+        //     Para: '2025',
+        //     Views: 0,
+        //     Likes: 0
 
-        },
+        // },
 
     ];
     let datamonth = [

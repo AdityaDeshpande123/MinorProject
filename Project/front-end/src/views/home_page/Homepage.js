@@ -147,6 +147,105 @@ function Homepage(props) {
             img: require("../../static/bg1.jpeg"),
             type : "Automobile"
         },
+        {
+
+            title: "Title 16",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Automobile"
+
+
+        },
+        {
+
+            title: "Title 17",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Food"
+
+
+        },
+        {
+
+            title: "Title 18",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Travel"
+
+
+        },
+        {
+
+            title: "Title 19",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Automobile"
+
+
+        },
+        {
+
+            title: "Title 20",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Food"
+
+
+        },
+        {
+
+            title: "Title 21",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Travel"
+
+
+        },
+        {
+
+            title: "Title 22",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Travel"
+
+
+        },
+        {
+
+            title: "Title 23",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Food"
+
+
+        },
+        {
+
+            title: "Title 24",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Automobile"
+
+
+        },
+        {
+
+            title: "Title 25",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Travel"
+
+
+        },
+        {
+
+            title: "Title 26",
+            Message: "This is the message body",
+            img: require("../../static/bg1.jpeg"),
+            type : "Automobile"
+
+
+        }
         
 
     ]);
