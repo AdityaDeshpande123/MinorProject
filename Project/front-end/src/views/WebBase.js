@@ -9,6 +9,9 @@ import automob from '../static/automobile.webp'
 import back from '../static/bg1.jpg'
 import { useNavigate } from 'react-router-dom';
 import img from '../static/bg1.jpeg'
+import logo from '../static/logofinal.png'
+
+
 function WebBase(props) {
     let loginstat = props.data;
    
@@ -80,7 +83,7 @@ function WebBase(props) {
 
             <footer className={styles.About}>
 
-            <img className={styles.fimg}  style={{width:"21vh",height:"21vh"}}></img>
+            <img src={logo} className={styles.fimg}  style={{width:"21vh",height:"21vh"}}></img>
             <div className={styles.info}>
             <h2 style={{color:"white",fontSize:"30px"}}>Info</h2>
              <ul style={{listStyleType:"none"}}>

@@ -90,9 +90,9 @@ export default function (props) {
 
 
         axios.post("http://localhost:8080/insertAuthPic", {
-          authid: 1,
+          authid: 4,
           path: `${compressedImageUrl}`,
-          authname: "Aditya"
+          authname: "Arvind Adiga"
         }).then((res) => {
 
         }).catch((err) => {
