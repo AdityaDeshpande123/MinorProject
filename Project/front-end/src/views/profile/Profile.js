@@ -4,7 +4,7 @@ import ppic from '../../static/author.jpeg'
 import back from '../../static/dashback2.jpg'
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import Pichart from './pichart/Pichart.js'
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Bardata from './Bardata'
 import axios from 'axios';
 import { type } from "@testing-library/user-event/dist/type";
@@ -39,6 +39,8 @@ function getfDay(num) {
     }
 }
 function Profile(authorid) {
+    const location = useLocation()
+    // alert("Author id is : " , location.authid)
     const convertDataUrlToImage = (imgUrl) => {
         return new Promise((resolve, reject) => {
             const img = new Image();
