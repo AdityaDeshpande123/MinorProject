@@ -37,6 +37,8 @@ function getBlogtype(arr,type)
 function Homepage(props) {
     const location = useLocation();
     const [islogin,setLogin] = useState(location.state ? location.state : false);
+    const [authid,setAuthid] = useState(location.authid)
+    
     const [publishblogs] = useState([
         {
 
@@ -172,6 +174,7 @@ function Homepage(props) {
                  travelBlogs = {travelBlogs}
                  foodBlogs = {foodBlogs}
                  automobilelBlogs = {automobilelBlogs}
+                 authid = {authid}
             
             ></WebBase>
             

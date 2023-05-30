@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import img from '../static/bg1.jpeg'
 function WebBase(props) {
     let loginstat = props.data;
-   
+    const authid = props.authid
     
     const navigate = useNavigate();
 
@@ -40,7 +40,7 @@ function WebBase(props) {
                    
                     <li onClick={()=> {
                         if(loginstat===true)
-                        navigate('profile');
+                        navigate('profile',{authid : authid});
                         else
                         {
                             alert("Please login/signup to continue");
