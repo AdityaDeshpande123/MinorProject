@@ -108,9 +108,55 @@ export default function (props) {
   };
 
 
+  const handleCLick = () => {
+    const name = document.getElementById('name').value
+    const email = document.getElementById('email').value
+    const bio = document.getElementById('phn').value
+    const phone = document.getElementById('phn').value
+    const password = document.getElementById('pass').value
+    //alert("Came here to signup")
+    const data = {
+      name: name,
+      email: email,
+      bio: bio,
+      phno: phone
+    }
+
+    axios.post("http://localhost:8080/postAuthDetails", data).then((res) => {
+
+      alert("Sign up success!!")
+
+    }).catch((err) => {
+
+      alert(err)
+
+    })
+
+    const authlogin = {
+      email: email,
+      authid : 5,
+      pass: password
+    }
+
+    axios.post("http://localhost:8080/saveAuthorDet", authlogin).then((res) => {
+
+      alert("Password Saved")
+
+    }).catch((err) => {
+
+      alert(err)
+
+    })
+
+    
+
+  }
+
+
   const navigate = useNavigate();
 
   let [authMode, setAuthMode] = useState("signin")
+  const [authloginid,setAutid] = useState()
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
@@ -138,8 +184,9 @@ export default function (props) {
             let data = res.data;
             if (data != null) {
               if (data.pass === pass) {
-                navigate('/', { state: true });
-                alert("Sign in Successful");
+                setAutid(data.authid)
+                
+                navigate('/', { state: true,authid : data.authid });
 
               }
               else {
@@ -228,6 +275,8 @@ export default function (props) {
               className={style.form_control}
               placeholder=" e.g Jane Doe"
               size="30"
+              name="name"
+              id="name"
             />
           </div>
           <div className={style.form_group}>
@@ -238,6 +287,8 @@ export default function (props) {
               placeholder="Enter your Bio"
               size="30"
               style={{ width: "41.7vh" }}
+              name="bio"
+              id="bio"
             />
           </div>
           <div className={style.form_group}>
@@ -247,6 +298,8 @@ export default function (props) {
               className={style.form_control}
               placeholder="Phone Number"
               size="30"
+              name="phn"
+              id="phn"
             />
           </div>
           <div className={style.form_group}>
@@ -257,6 +310,8 @@ export default function (props) {
               className={style.form_control}
               placeholder=" Email Address"
               size="30"
+              name="email"
+              id="email"
               pattern="[A-Za-z0-9]+@gmail.com"
             />
           </div>
@@ -267,13 +322,18 @@ export default function (props) {
               className={style.form_control}
               placeholder=" Password"
               size="30"
+              name="pass"
+              id="pass"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              id='signuppwd'
             />
           </div>
 
           <div className={style.d_grid}>
-            <button className={style.btn}>
+            <button
+              className={style.btn}
+              onClick={handleCLick}
+
+            >
               Sign Up
             </button>
             <button className={style.btn_reset}>

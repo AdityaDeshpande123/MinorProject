@@ -23,6 +23,8 @@ import React, { useState } from "react";
 
 function WebBase(props) {
     let loginstat = props.data;
+    const authid = props.authid
+    
     const navigate = useNavigate();
     document.body.style.backgroundImage = `url(${back})`;
     document.body.style.backgroundSize = "1600px 900px";
@@ -56,7 +58,7 @@ function WebBase(props) {
                    
                     <li onClick={()=> {
                         if(loginstat===true)
-                        navigate('profile');
+                        navigate('profile',{authid : authid});
                         else
                         {
                             alert("Please login/signup to continue");
