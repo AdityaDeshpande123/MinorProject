@@ -14,6 +14,8 @@ import Savblogs from './views/profile/savedblogs/Savblogs';
 import Template11 from './views/blog_view/Template11';
 import Template22 from './views/blog_view/Template22';
 import Template33 from './views/blog_view/Template33'
+import Viewblog from './views/view_blogs/Viewblog';
+
 
 function App() {
 
@@ -37,6 +39,7 @@ function App() {
         </Routes>
 
   </BrowserRouter> 
+  {/* <Viewblog></Viewblog> */}
 
    {/*<Tempone></Tempone> */}
 {/*<Template3></Template3>  */}
