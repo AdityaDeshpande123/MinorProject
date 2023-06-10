@@ -2,12 +2,42 @@ import style from "./Template3.module.css"
 import React,{useState} from "react";
 import person from '../../../static/person.png';
 import signin from '../../../static/signin.jpg';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import {useRef} from 'react';
 
+
+import { Router, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+
 function Template() {
+
+
+  const navigate = useNavigate();
+
+
+
+  function nav1() {
+    const urli = document.getElementById('choosetemplate').value;
+    if(urli=='temp3')
+    {
+      alert("Already in Template 3");
+    }
+    else if(urli=='temp2')
+    navigate('/temp1/temp2');
+    else
+    navigate('/temp1');
+  }
+
+
+
+
+
+
+
+
   const pdfRef = useRef();
       
         const handleConvertToPDF = () => {
@@ -53,6 +83,22 @@ function Template() {
           <div className={style.main}>
           <div className={style.mainHeader}>
           <h1 className={style.base_h1}>BLOGOSPHERE</h1>
+
+
+          <label for="choosetemplate" className={style.dropdown}>Template</label>
+                <select name="choosetemplate" id="choosetemplate" className={style.dropdownoptions} onChange={nav1}>
+                    <option>Choose a Template</option>
+                    <option value="temp1">Template 1</option>
+                    <option value="temp2">Template 2</option>
+                    <option value="temp3">Template 3</option>
+                </select>
+
+
+
+
+
+
+
       </div>
       <form method="post" target="_self" action="">
             <div className={style.temp3} ref={pdfRef}>
