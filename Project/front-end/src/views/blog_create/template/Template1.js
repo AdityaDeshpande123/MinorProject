@@ -2,74 +2,105 @@ import style from "./Template1.module.css"
 import React, { useState } from "react";
 import person from '../../../static/person.png';
 import signin from '../../../static/signin.jpg';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import plus from '../../../static/plus.jpeg';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import { useRef } from 'react';
+
+import {useRef} from 'react';
+
+import { Router, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 import * as htmlToImage from 'html-to-image';
 
 
 function Template() {
-  // const pdfRef = useRef();
 
-  const domEl = useRef(null);
-  const downloadImage = async () => {
-    const dataUrl = await htmlToImage.toPng(domEl.current);
-    console.log()
-    // download image
-    const link = document.createElement('a');
-    link.download = "html-to-img.png";
-    link.href = dataUrl;
-    link.click();
+
+
+  const navigate = useNavigate();
+
+
+
+  function nav1() {
+    const urli = document.getElementById('choosetemplate').value;
+    if(urli=='temp1')
+    {
+      alert("Already in Template 1");
+    }
+    else
+    navigate(urli);
   }
 
-  // const handleConvertToPDF = () => {
-  //   const input = pdfRef.current;
 
-  //   html2canvas(input)
-  //     .then((canvas) => {
-  //       const imgData = canvas.toDataURL('image/png');
-  //       const pdf = new jsPDF();
-  //       const pdfWidth = pdf.internal.pageSize.getWidth();
-  //       const pdfHeight = pdf.internal.pageSize.getHeight();
-  //       const imgWidth = canvas.width;
-  //       const imgHeight = canvas.height;
-  //       const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-  //       const imgX = (pdfWidth - imgWidth * ratio) / 2;
-  //       const imgY = (pdfHeight - imgHeight * ratio) / 2;
-  //       pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-  //       pdf.save('template.pdf');
-  //     });
-  // };
-  const [file, setFile] = useState();
-  const [file1, setFile1] = useState();
-  const [file2, setFile2] = useState();
 
-  function handleChange(e) {
-    console.log(e.target.files);
-    setFile(URL.createObjectURL(e.target.files[0]));
-  }
-  function handleChange1(e1) {
-    console.log(e1.target.files);
-    setFile1(URL.createObjectURL(e1.target.files[0]));
-  }
-  function handleChange2(e2) {
-    console.log(e2.target.files);
-    setFile2(URL.createObjectURL(e2.target.files[0]));
-  }
 
-  return (
-    <div className={style.main} id="domEl" ref={domEl}>
-      <div className={style.mainHeader}>
-        <h1 className={style.base_h1}>BLOGOSPHERE</h1>
-      </div >
-      <div  >
+    const pdfRef = useRef();
+      
+        const handleConvertToPDF = () => {
+          const input = pdfRef.current;
+      
+          html2canvas(input)
+            .then((canvas) => {
+              const imgData = canvas.toDataURL('image/png');
+              const pdf = new jsPDF();
+              const pdfWidth=pdf.internal.pageSize.getWidth();
+            const pdfHeight=pdf.internal.pageSize.getHeight();
+            const imgWidth=canvas.width;
+            const imgHeight=canvas.height;
+            const ratio=Math.min(pdfWidth/imgWidth, pdfHeight/imgHeight);
+            const imgX=(pdfWidth-imgWidth*ratio)/2;
+            const imgY=(pdfHeight-imgHeight*ratio)/2;
+            pdf.addImage(imgData,'PNG',imgX,imgY,imgWidth*ratio,imgHeight*ratio);
+              pdf.save('template.pdf');
+            });
+        };
+        const [file, setFile] = useState();
+        const [file1, setFile1] = useState();
+        const [file2, setFile2] = useState();
 
-        <form method="post" target="_self" action="">
+        function handleChange(e) {
+            console.log(e.target.files);
+            setFile(URL.createObjectURL(e.target.files[0]));
+        }
+        function handleChange1(e1) {
+            console.log(e1.target.files);
+            setFile1(URL.createObjectURL(e1.target.files[0]));
+        }
+        function handleChange2(e2) {
+            console.log(e2.target.files);
+            setFile2(URL.createObjectURL(e2.target.files[0]));
+        }
 
-          <div className={style.temp1} >
+
+
+
+        
+  
+
+
+
+    return (
+          <div className={style.main}>
+          <div className={style.mainHeader}>
+          <h1 className={style.base_h1}>BLOGOSPHERE</h1>
+
+
+          <label for="choosetemplate" className={style.dropdown}>Template</label>
+                <select name="choosetemplate" id="choosetemplate" className={style.dropdownoptions} onChange={nav1}>
+                    <option>Choose a Template</option>
+                    <option value="temp1">Template 1</option>
+                    <option value="temp2">Template 2</option>
+                    <option value="temp3">Template 3</option>
+                </select>
+
+
+
+      </div>
+            <form method="post" target="_self" action="">
+            <div className={style.temp1} ref={pdfRef}>
             <div className={style.title}>
               <textarea id="title" name="title" style={{ textDecorationThickness: "100%", border: "0px solid black", width: "140vh", backgroundColor: "rgb(223, 220, 220)" }}></textarea>
             </div>

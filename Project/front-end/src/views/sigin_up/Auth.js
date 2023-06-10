@@ -305,12 +305,14 @@ export default function (props) {
           <div className={style.form_group}>
             <label>Email address</label><pre></pre>
             <input
+              required
               type="email"
               className={style.form_control}
               placeholder=" Email Address"
               size="30"
               name="email"
               id="email"
+              pattern="[A-Za-z0-9]+@gmail.com"
             />
           </div>
           <div className={style.form_group}>
@@ -322,6 +324,7 @@ export default function (props) {
               size="30"
               name="pass"
               id="pass"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             />
           </div>
 

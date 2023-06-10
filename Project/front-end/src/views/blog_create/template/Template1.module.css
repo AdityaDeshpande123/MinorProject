@@ -273,3 +273,21 @@
   }
 
 
+
+  .dropdown{
+    font-size: 22px;
+    position: absolute;
+    padding-top: 27px;
+    padding-left: 620px;
+    color: aliceblue;
+}
+
+.dropdownoptions{
+  position: absolute;
+  margin-left: 1000px;
+  margin-top: -45px;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+
