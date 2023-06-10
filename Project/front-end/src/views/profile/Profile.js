@@ -449,10 +449,10 @@ function Profile(authorid) {
                     <h1>Published Blogs</h1>
                 </div>
 
-                <div className={styles.sblogs} onClick={() => { nav1("savedblog") }}>
+                {/* <div className={styles.sblogs} onClick={() => { nav1("savedblog") }}>
 
                     <h1>Saved Blogs</h1>
-                </div>
+                </div> */}
 
             </div>
 

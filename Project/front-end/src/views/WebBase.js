@@ -10,32 +10,45 @@ import back from '../static/bg1.jpg'
 import { useNavigate } from 'react-router-dom';
 import img from '../static/bg1.jpeg'
 import logo from '../static/logofinal.png'
+import logoutimg from '../static/logout.jpg'
+
+import React, { useState } from "react";
+
+
+
+//import { useHistory } from 'react-router-dom';
+
+
 
 
 function WebBase(props) {
     let loginstat = props.data;
-   
-    
     const navigate = useNavigate();
-
-    
-    
     document.body.style.backgroundImage = `url(${back})`;
     document.body.style.backgroundSize = "1600px 900px";
+
+
+
+ 
     
 
     return (
          
-
-
         <div className={styles.grid_lay}>
             
             <div className={styles.mainHeader}>
 
-                <h1 className={styles.base_h1}>BLOGOSPHERE <button onClick={()=> navigate('createblog')} className={styles.wrBlog}>Write a blog</button></h1>
+                <h1 className={styles.base_h1}>BLOGOSPHERE <button /*onClick={()=> navigate('createblog')}*/ onClick={()=> {
+                        if(loginstat===true)
+                        navigate('temp1');
+                        else
+                        {
+                            alert("Please login/signup to continue");
+                            navigate('signup',{state : loginstat});
+                        }
+                    }} className={styles.wrBlog}>Write a blog</button></h1>
                 
-
-            </div>
+        </div>
 
             <div className={styles.navBar}>
 
@@ -76,6 +89,20 @@ function WebBase(props) {
                         navigate('signup')
 
                     }} className={styles.base_li}><img src={signin} height={"42px"} alt="image" style={{float:"left",paddingRight:"14px",paddingLeft:"10px"}}></img>Sign/SignUp</li>
+                    <li 
+
+                   // onClick={()=> {
+
+                          //  logout
+                        // if(loginstat===true)
+                        // navigate('profile');
+                        // else
+                        // {
+                        //     alert("Please login/signup to continue");
+                        //     navigate('signup',{state : loginstat});
+                        // }
+                    //}} 
+                    className={styles.base_li}> <img src={logoutimg} height={"35px"} alt="image" style={{float:"left",paddingRight:"22px",paddingLeft:"18px"}}></img>Logout</li>
                 </ul>
 
             </div>

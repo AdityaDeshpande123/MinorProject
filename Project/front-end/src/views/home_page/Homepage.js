@@ -40,48 +40,48 @@ function Homepage(props) {
     const [publishblogs] = useState([
         {
 
-            title: "Title 1",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
+            title: "Purchasing a car",
+            Message: "In todays world where there are a wide variety of options for purchasing a car",
+            img: require("../../static/blogimgs/buycar.jpeg"),
             type : "Automobile"
 
 
         },
         {
 
-            title: "Title 2",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
+            title: "Self driving under scrutiny",
+            Message: "Autonomous driving is not so much about being able to check your emails or enjoy",
+            img: require("../../static/blogimgs/selfdrive.jpeg"),
             type : "Automobile"
 
         },
         {
 
-            title: "Title 3",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
+            title: "Best Restaurants in Mysore",
+            Message: "When it comes to having a good meal we keep wondering which is the best restaurant",
+            img: require("../../static/blogimgs/restaurants.jpeg"),
             type : "Food"
 
         },
         {
 
-            title: "Title 4",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
+            title: "Miso Crunch Salad",
+            Message: "Shredded cabbage and kale, shrimp, avocado, cilantro and chili-flavored peanuts,",
+            img: require("../../static/blogimgs/salad.jpg"),
             type : "Food"
         },
         {
 
-            title: "Title 5",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
-            type : "Automobile"
+            title: "A Small Hike",
+            Message: "It was a beautiful sunny day in February at Fagu in Himachal Pradesh",
+            img: require("../../static/blogimgs/hike.jpeg"),
+            type : "Travel"
         },
         {
 
-            title: "Title 6",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
+            title: "The Tranquil Morning Walk",
+            Message: "I recently stayed at the Novotel Vizag and I could see the Ramakrishna Beach",
+            img: require("../../static/blogimgs/mwalk.jpeg"),
             type : "Travel"
         },
         {
@@ -89,7 +89,7 @@ function Homepage(props) {
             title: "Title 7",
             Message: "This is the message body",
             img: require("../../static/bg1.jpeg"),
-            type : "Travel"
+            type : "Automobile"
         },
         {
 
@@ -107,9 +107,9 @@ function Homepage(props) {
         },
         {
 
-            title: "Title 10",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
+            title: "My Visit to Aahana Resort",
+            Message: "Sometime back I visited Aahana Resorts right next to the Jim Corbettt National Park",
+            img: require("../../static/blogimgs/ahanaresort.jpeg"),
             type : "Travel"
         },
         {
@@ -128,16 +128,16 @@ function Homepage(props) {
         },
         {
 
-            title: "Title 13",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
+            title: "Moods of Mt. Fishtail",
+            Message: "In all my previous trips to Pokhara I barely got a glimpse of Mt. Machapuchare or Mt. Fishtail",
+            img: require("../../static/blogimgs/fishtail.jpeg"),
             type : "Travel"
         },
         {
 
-            title: "Title 14",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
+            title: "The Beach Road Vizag",
+            Message: "Rooftops provide incredible photo opportunities! Novotel Vizag has a wonderful",
+            img: require("../../static/blogimgs/vizag.jpg"),
             type : "Travel"
         },
         {
@@ -167,9 +167,9 @@ function Homepage(props) {
         },
         {
 
-            title: "Title 18",
-            Message: "This is the message body",
-            img: require("../../static/bg1.jpeg"),
+            title: "Fall Colors in Ladakh",
+            Message: "The second trip of the year was to Leh, Ladakh. I was yearning to go on a break!",
+            img: require("../../static/blogimgs/fallcolours.jpeg"),
             type : "Travel"
 
 
@@ -274,14 +274,14 @@ function Homepage(props) {
             
             ></WebBase>
             
-            <div className={styles.searchBar}>
+            {/* <div className={styles.searchBar}>
 
                 <input type="text" className={styles.search}></input>
                 <img src={search} alt="search" className={styles.searchImg}></img>
 
 
 
-            </div>
+            </div> */}
 
             <div className={styles.blog_grid}>
 

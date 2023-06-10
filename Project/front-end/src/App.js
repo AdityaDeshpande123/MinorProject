@@ -27,19 +27,27 @@ function App() {
           <Route path="/" element={<Homepage></Homepage>}></Route>
           <Route path='/signup' element={<Signpage></Signpage>}></Route>
           <Route path='/profile' element={<Profile></Profile>}></Route>
-          <Route path='/createblog' element={<Tempone></Tempone>}></Route>
-          <Route exact path='/createblog/temp1' element={<Template1></Template1>}></Route>
+          {/* <Route path='/createblog' element={<Tempone></Tempone>}></Route> */}
+
+          {/* <Route exact path='/createblog/temp1' element={<Template1></Template1>}></Route>
           <Route exact path='/createblog/temp2' element={<Template2></Template2>}></Route>
-          <Route exact path='/createblog/temp3' element={<Template3></Template3>}></Route>
+          <Route exact path='/createblog/temp3' element={<Template3></Template3>}></Route> */}
+
+
+          <Route exact path='/temp1' element={<Template1></Template1>}></Route>
+          {/* <Route exact path='/temp1/temp1' element={<Template1></Template1>}></Route> */}
+          <Route exact path='/temp1/temp2' element={<Template2></Template2>}></Route>
+          <Route exact path='/temp1/temp3' element={<Template3></Template3>}></Route>
+
+
+
           <Route exact path='/profile/publishblog' element={<Publogs></Publogs>}></Route>
-          <Route exact path='/profile/savedblog' element={<Savblogs></Savblogs>}></Route>
+          {/* <Route exact path='/profile/savedblog' element={<Savblogs></Savblogs>}></Route> */}
 
         </Routes>
 
   </BrowserRouter> 
 
-   {/*<Tempone></Tempone> */}
-{/*<Template3></Template3>  */}
     </div>
 
   );

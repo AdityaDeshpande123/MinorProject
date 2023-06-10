@@ -139,6 +139,7 @@ export default function (props) {
             if (data != null) {
               if (data.pass === pass) {
                 navigate('/', { state: true });
+                alert("Sign in Successful");
 
               }
               else {
@@ -251,10 +252,12 @@ export default function (props) {
           <div className={style.form_group}>
             <label>Email address</label><pre></pre>
             <input
+              required
               type="email"
               className={style.form_control}
               placeholder=" Email Address"
               size="30"
+              pattern="[A-Za-z0-9]+@gmail.com"
             />
           </div>
           <div className={style.form_group}>
@@ -264,6 +267,8 @@ export default function (props) {
               className={style.form_control}
               placeholder=" Password"
               size="30"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              id='signuppwd'
             />
           </div>
 
