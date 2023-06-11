@@ -40,7 +40,8 @@ function getfDay(num) {
 }
 function Profile(authorid) {
     const location = useLocation()
-    // alert("Author id is : " , location.authid)
+    const authid = location.state
+    //alert(authid)
     const convertDataUrlToImage = (imgUrl) => {
         return new Promise((resolve, reject) => {
             const img = new Image();
@@ -59,7 +60,7 @@ function Profile(authorid) {
 
 
 
-    authorid = 1;
+    authorid = authid;
 
     let ddata;
     const arr = {
@@ -88,7 +89,7 @@ function Profile(authorid) {
         });
 
 
-        axios.get(`http://localhost:8080/getAuthDetails/3`).then((res) => {
+        axios.get(`http://localhost:8080/getAuthDetails/${authorid}`).then((res) => {
 
             setAuthData(res.data)
             //alert(authData)
@@ -98,7 +99,7 @@ function Profile(authorid) {
         })
 
 
-        axios.get(`http://localhost:8080/getAuthPic/55`).then((res) => {
+        axios.get(`http://localhost:8080/getAuthPic/${authid}`).then((res) => {
 
             console.log(res.data)
             const imgUrl = res.data.path
