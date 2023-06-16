@@ -1,39 +1,25 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useLocation } from "react-router-dom";
 
-// Import the styles
-import React, { useEffect, useState, useRef } from 'react';
+function Viewblog() {
+    const location = useLocation()
+    let bid = location.state
+    if (!bid)
+        bid = 0
 
-import * as htmlToImage from 'html-to-image';
-
-function Viewblog(props) {
-    const domEl = useRef(null);
-    const downloadImage = async () => {
-        const dataUrl = await htmlToImage.toPng(domEl.current);
-        console.log()
-        // download image
-        const link = document.createElement('a');
-        link.download = "html-to-img.png";
-        link.href = dataUrl;
-        link.click();
-    }
+    const img = require(`../../static/auth_blogs/${bid}/blog.png`)
 
     return (
 
         <>
-            <div >
-                <h3 style={{color:"white"}}>Convert HTML element or document into Image in React</h3>
-                <h3><a href="https://www.cluemediator.com/" target="_blank" rel="noopener">Clue Mediator</a></h3>
 
+            <h1>Hello {bid}</h1>
+            <img src={img} alt="image" style={{height:"800px",width:"700px"}}></img>
 
-            </div>
-
-            <button onClick={downloadImage}>Submit</button>
 
         </>
-
-
     )
-
-
 }
 
 
