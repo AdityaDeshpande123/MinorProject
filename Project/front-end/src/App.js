@@ -40,6 +40,7 @@ function App() {
           {/* <Route exact path='/temp1/temp1' element={<Template1></Template1>}></Route> */}
           <Route exact path='/temp1/temp2' element={<Template2></Template2>}></Route>
           <Route exact path='/temp1/temp3' element={<Template3></Template3>}></Route>
+          <Route path='/dispblog' element={<Viewblog></Viewblog>}></Route>
 
 
 
