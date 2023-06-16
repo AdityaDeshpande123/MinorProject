@@ -3,6 +3,8 @@ import React,{useState} from "react";
 import person from '../../../static/person.png';
 import signin from '../../../static/signin.jpg';
 //import { useNavigate } from 'react-router-dom';
+import logo from '../../../static/logofinal.png'
+
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import {useRef} from 'react';
@@ -32,32 +34,24 @@ function Template() {
   }
 
 
+  const imageRef = useRef();
+
+  const handleDownload = () => 
+  {
+      html2canvas(imageRef.current)
+      .then((canvas) => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL();
+        link.download = 'page_image.png';
+        link.click();
+      });
+    }
 
 
 
 
 
 
-  const pdfRef = useRef();
-      
-        const handleConvertToPDF = () => {
-          const input = pdfRef.current;
-      
-          html2canvas(input)
-            .then((canvas) => {
-              const imgData = canvas.toDataURL('image/png');
-              const pdf = new jsPDF();
-              const pdfWidth=pdf.internal.pageSize.getWidth();
-            const pdfHeight=pdf.internal.pageSize.getHeight();
-            const imgWidth=canvas.width;
-            const imgHeight=canvas.height;
-            const ratio=Math.min(pdfWidth/imgWidth, pdfHeight/imgHeight);
-            const imgX=(pdfWidth-imgWidth*ratio)/2;
-            const imgY=(pdfHeight-imgHeight*ratio)/2;
-            pdf.addImage(imgData,'PNG',imgX,imgY,imgWidth*ratio,imgHeight*ratio);
-              pdf.save('template.pdf');
-            });
-        };
   const [file, setFile] = useState();
   const [file1, setFile1] = useState();
   const [file2, setFile2] = useState();
@@ -101,7 +95,7 @@ function Template() {
 
       </div>
       <form method="post" target="_self" action="">
-            <div className={style.temp3} ref={pdfRef}>
+            <div className={style.temp3} ref={imageRef}>
             <div className={style.title}>
             <textarea id="title" name="title" style={{textDecorationThickness:"100%",border: "0px solid black",width:"140vh",backgroundColor:"white"}}></textarea>
             </div>
@@ -157,10 +151,10 @@ function Template() {
             </div>
             </div>
             </form>
-            <button type="submit" className={style.b3} onClick={handleConvertToPDF}> Publish</button>
-            <button type="draft" className={style.b4}>Save as draft</button>
+            <button type="submit" className={style.b3} onClick={handleDownload}> Publish</button>
+            {/* <button type="draft" className={style.b4}>Save as draft</button> */}
             <footer className={style.About}>
-            <img className={style.fimg}  style={{width:"21vh",height:"21vh"}}></img>
+            <img src={logo} className={style.fimg}  style={{width:"21vh",height:"21vh"}}></img>
             <div className={style.info}>
             <h2 style={{color:"white",fontSize:"30px"}}>Info</h2>
              <ul style={{listStyleType:"none"}}>
