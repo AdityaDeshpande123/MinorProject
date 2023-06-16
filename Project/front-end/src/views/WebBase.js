@@ -24,7 +24,8 @@ import React, { useState } from "react";
 function WebBase(props) {
     let loginstat = props.data;
     const authid = props.authid
-    
+    //alert(authid)
+    let setAuthorfunc = props.setAuthor
     const navigate = useNavigate();
     document.body.style.backgroundImage = `url(${back})`;
     document.body.style.backgroundSize = "1600px 900px";
@@ -58,11 +59,11 @@ function WebBase(props) {
                    
                     <li onClick={()=> {
                         if(loginstat===true)
-                        navigate('profile',{authid : authid});
+                        navigate('profile',{state : authid});
                         else
                         {
                             alert("Please login/signup to continue");
-                            navigate('signup',{state : loginstat});
+                            navigate('signup',{state : loginstat,setAuthor : setAuthorfunc});
                         }
                     }} className={styles.base_li}> <img src={person} height={"35px"} alt="image" style={{float:"left",paddingRight:"22px",paddingLeft:"10px"}}></img>Profile</li>
                     <li 

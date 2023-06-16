@@ -1,7 +1,7 @@
 import WebBase from "../WebBase";
 import styles from './Homepage.module.css'
 import Card from "../card-view/Card";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import bg1 from '../../static/bg1.jpeg'
 import bg2 from '../../static/bg1.jpg'
 import search from '../../static/search-512.png'
@@ -36,9 +36,17 @@ function getBlogtype(arr,type)
 }
 function Homepage(props) {
     const location = useLocation();
-    const [islogin,setLogin] = useState(location.state ? location.state : false);
-    const [authid,setAuthid] = useState(location.authid)
     
+    const [authid,setAuthid] = useState(location.state)
+    const [islogin,setLogin] = useState();
+    //alert(location.state)
+    useEffect(()=>{
+        if(location.state!=null)
+        setLogin(true)
+    })
+
+    
+
     const [publishblogs] = useState([
         {
 

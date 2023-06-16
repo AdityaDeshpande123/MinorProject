@@ -51,7 +51,8 @@ export default function (props) {
   //   reader.readAsDataURL(file);
 
   // }
-  const [image, setImage] = useState('')
+  const [image, setImage] = useState()
+
   const handlePic = (event) => {
 
 
@@ -81,6 +82,7 @@ export default function (props) {
         // Compress the image as a data URL with a specified quality (e.g., 0.7 for 70% quality)
         const compressedImageUrl = canvas.toDataURL('image/jpeg', 0.2);
         console.log(compressedImageUrl)
+        setImage(compressedImageUrl)
         let val = "Aditya"
         const jsonData = JSON.stringify({
           authid: 69,
@@ -89,15 +91,7 @@ export default function (props) {
         })
 
 
-        axios.post("http://localhost:8080/insertAuthPic", {
-          authid: 4,
-          path: `${compressedImageUrl}`,
-          authname: "Arvind Adiga"
-        }).then((res) => {
 
-        }).catch((err) => {
-          console.log(err)
-        })
 
       };
 
@@ -111,7 +105,7 @@ export default function (props) {
   const handleCLick = () => {
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
-    const bio = document.getElementById('phn').value
+    const bio = document.getElementById('bio').value
     const phone = document.getElementById('phn').value
     const password = document.getElementById('pass').value
     //alert("Came here to signup")
@@ -122,33 +116,50 @@ export default function (props) {
       phno: phone
     }
 
-    axios.post("http://localhost:8080/postAuthDetails", data).then((res) => {
-
-      alert("Sign up success!!")
-
-    }).catch((err) => {
-
-      alert(err)
-
-    })
-
-    const authlogin = {
+    let authlogin = {
       email: email,
-      authid : 5,
+      authid: -1,
       pass: password
     }
 
-    axios.post("http://localhost:8080/saveAuthorDet", authlogin).then((res) => {
 
-      alert("Password Saved")
+    axios.post("http://localhost:8080/postAuthDetails", data).then((res) => {
+      alert("Author details saved")
+      axios.get(`http://localhost:8080/getAuthDetailsemail/${email}`).then((res) => {
+        alert(res.data)
+        console.log(res.data)
+        authlogin.authid = res.data[0].id;
+      
+        axios.post("http://localhost:8080/saveAuthorDet", authlogin).then((res) => {
+          console.log("Password saved")
+
+        }).catch((err) => {
+
+          alert(err)
+
+        })
+
+
+        axios.post("http://localhost:8080/insertAuthPic", {
+          authid: authlogin.authid,
+          path: `${image}`,
+          authname: "Arvind Adiga"
+        }).then((res) => {
+
+        }).catch((err) => {
+          console.log(err)
+        })
+      })
+
+
 
     }).catch((err) => {
 
-      alert(err)
-
     })
 
-    
+
+
+
 
   }
 
@@ -156,7 +167,7 @@ export default function (props) {
   const navigate = useNavigate();
 
   let [authMode, setAuthMode] = useState("signin")
-  const [authloginid,setAutid] = useState()
+  const [authloginid, setAutid] = useState()
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
@@ -184,9 +195,9 @@ export default function (props) {
             let data = res.data;
             if (data != null) {
               if (data.pass === pass) {
+
                 setAutid(data.authid)
-                
-                navigate('/', { state: true,authid : data.authid });
+                navigate('/', { state: data.authid });
 
               }
               else {
@@ -332,7 +343,6 @@ export default function (props) {
             <button
               className={style.btn}
               onClick={handleCLick}
-
             >
               Sign Up
             </button>
