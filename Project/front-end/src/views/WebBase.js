@@ -92,19 +92,11 @@ function WebBase(props) {
                         navigate('signup')
 
                     }} className={styles.base_li}><img src={signin} height={"42px"} alt="image" style={{float:"left",paddingRight:"14px",paddingLeft:"10px"}}></img>Sign/SignUp</li>
-                    <li 
+                    <li onClick={()=> {
 
-                   // onClick={()=> {
-
-                          //  logout
-                        // if(loginstat===true)
-                        // navigate('profile');
-                        // else
-                        // {
-                        //     alert("Please login/signup to continue");
-                        //     navigate('signup',{state : loginstat});
-                        // }
-                    //}} 
+                            loginstat=false;
+                       
+                    }} 
                     className={styles.base_li}> <img src={logoutimg} height={"35px"} alt="image" style={{float:"left",paddingRight:"22px",paddingLeft:"18px"}}></img>Logout</li>
                 </ul>
 

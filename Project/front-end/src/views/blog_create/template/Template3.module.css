@@ -299,8 +299,8 @@
   .dropdown{
     font-size: 22px;
     position: absolute;
-    padding-top: 27px;
-    padding-left: 620px;
+    padding-top: 0px;
+    padding-left: 0px;
     color: aliceblue;
 }
 
